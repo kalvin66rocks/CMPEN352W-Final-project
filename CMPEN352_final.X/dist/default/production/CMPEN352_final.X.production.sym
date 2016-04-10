@@ -12,7 +12,7 @@ ISR@j 12 0 COMRAM 1
 _main 1068 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 29 0 COMRAM 1
-start 156 0 CODE 0
+start 15A 0 CODE 0
 printf@ap 1E 0 COMRAM 1
 _TX2IF 7D24 0 ABS 0
 _TMR0L FD6 0 ABS 0
@@ -43,7 +43,7 @@ __Hnvrram 0 0 COMRAM 1
 __Lnvrram 0 0 COMRAM 1
 __CFG_PWRTEN$ON 0 0 ABS 0
 int$flags 29 0 COMRAM 1
-__end_of_ISR 156 0 CODE 0
+__end_of_ISR 15A 0 CODE 0
 _RCREG2 F74 0 ABS 0
 _SPBRG2 F75 0 ABS 0
 __end_of_putch 121A 0 CODE 0
@@ -70,7 +70,7 @@ __Hmediumconst 0 0 MEDIUMCONST 0
 __Lmediumconst 0 0 MEDIUMCONST 0
 __Hfarbss 0 0 FARRAM 0
 __Lfarbss 0 0 FARRAM 0
-__Hintcode 156 0 CODE 0
+__Hintcode 15A 0 CODE 0
 __Lintcode 8 0 CODE 0
 __Hfardata 0 0 FARRAM 0
 __Lfardata 0 0 FARRAM 0
@@ -93,10 +93,10 @@ __Ltemp 29 0 COMRAM 1
 stacklo 60 0 ABS 0
 __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
-__Hinit 156 0 CODE 0
-__Linit 156 0 CODE 0
-__Hintcodelo 156 0 CODE 0
-__Lintcodelo 156 0 CODE 0
+__Hinit 15A 0 CODE 0
+__Linit 15A 0 CODE 0
+__Hintcodelo 15A 0 CODE 0
+__Lintcodelo 15A 0 CODE 0
 __Hrbss 0 0 COMRAM 1
 __end_of_main 112C 0 CODE 0
 __Lrbss 0 0 COMRAM 1
@@ -127,8 +127,8 @@ __Hbank4 0 0 ABS 0
 __Lbank4 0 0 ABS 0
 __Hbank5 0 0 ABS 0
 __Lbank5 0 0 ABS 0
-__Hpowerup 156 0 CODE 0
-__Lpowerup 156 0 CODE 0
+__Hpowerup 15A 0 CODE 0
+__Lpowerup 15A 0 CODE 0
 __Hbank6 0 0 ABS 0
 __Lbank6 0 0 ABS 0
 __Hbank7 0 0 ABS 0
@@ -225,8 +225,8 @@ __CFG_WDTEN$OFF 0 0 ABS 0
 ___intlo_sp 0 0 STACK 2
 _OSCCONbits FD3 0 ABS 0
 _INTCONbits FF2 0 ABS 0
-__Hend_init 15A 0 CODE 0
-__Lend_init 156 0 CODE 0
+__Hend_init 15E 0 CODE 0
+__Lend_init 15A 0 CODE 0
 _INIT_PIC 11A4 0 CODE 0
 __smallconst 1000 0 SMALLCONST 0
 __Hreset_vec 4 0 CODE 0
@@ -249,7 +249,7 @@ __end_of_INIT_PIC 11F4 0 CODE 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
 reset_vec 0 3 CODE 0 0
-intcode 8 159 CODE 8 0
+intcode 8 15D CODE 8 0
 smallconst 1000 1067 SMALLCONST 1000 0
 config 300000 30000D CONFIG 300000 0
 idloc 200000 200007 IDLOC 200000 0
@@ -258,7 +258,7 @@ text0 1068 1219 CODE 1068 0
 %locals
 dist/default/production\CMPEN352_final.X.production.obj
 C:\Program Files (x86)\Microchip\xc8\v1.36\include\pic18f26k22.h
-C:\Users\Mike\AppData\Local\Temp\s1uk.
+C:\Users\Mike\AppData\Local\Temp\s2b8.
 859 11F4 0 CODE 0
 861 11F4 0 CODE 0
 864 11F4 0 CODE 0
@@ -275,7 +275,7 @@ C:\Users\Mike\AppData\Local\Temp\s1uk.
 896 1206 0 CODE 0
 897 1208 0 CODE 0
 898 120A 0 CODE 0
-C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
+bitbang.c
 96 1068 0 CODE 0
 98 1068 0 CODE 0
 100 106C 0 CODE 0
@@ -318,13 +318,13 @@ C:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\doprnt.c
 822 1166 0 CODE 0
 635 1168 0 CODE 0
 536 118A 0 CODE 0
-C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
-250 120E 0 CODE 0
+bitbang.c
+251 120E 0 CODE 0
+254 1210 0 CODE 0
 253 1210 0 CODE 0
-252 1210 0 CODE 0
-254 1214 0 CODE 0
-256 1218 0 CODE 0
-C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
+255 1214 0 CODE 0
+257 1218 0 CODE 0
+bitbang.c
 157 11A4 0 CODE 0
 159 11A4 0 CODE 0
 160 11A6 0 CODE 0
@@ -360,7 +360,7 @@ C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
 202 11EE 0 CODE 0
 204 11F0 0 CODE 0
 207 11F2 0 CODE 0
-C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
+bitbang.c
 207 8 0 CODE 0
 212 8 0 CODE 0
 214 42 0 CODE 0
@@ -378,8 +378,10 @@ C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
 232 E8 0 CODE 0
 234 F8 0 CODE 0
 228 FA 0 CODE 0
-239 108 0 CODE 0
-227 10A 0 CODE 0
-241 110 0 CODE 0
-242 112 0 CODE 0
-244 11A 0 CODE 0
+237 100 0 CODE 0
+238 108 0 CODE 0
+239 10C 0 CODE 0
+227 10E 0 CODE 0
+242 114 0 CODE 0
+243 116 0 CODE 0
+245 11E 0 CODE 0

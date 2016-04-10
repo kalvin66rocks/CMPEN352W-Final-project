@@ -1,5 +1,5 @@
 
-# 1 "C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c"
+# 1 "bitbang.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.36\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -8877,7 +8877,7 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
 
-# 24 "C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c"
+# 24 "bitbang.c"
 #pragma config FOSC = INTIO67
 #pragma config PLLCFG = ON
 #pragma config PRICLKEN = OFF
@@ -9055,16 +9055,17 @@ else pwm_channel[j] = 1;
 PIR1bits.TMR1IF = 0;
 }
 
-
-
+TMR1 = 65525;
+while(PIR1bits.TMR1IF == 0);
 PIR1bits.TMR1IF = 0;
 }
+
 LATCbits.LATC1 ^= 1;
 TMR0 = 31536;
 
 }
 
-# 250
+# 251
 void putch(char c) {
 
 while( ! TX2IF)
