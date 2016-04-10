@@ -56,7 +56,6 @@
 #define five_us    65525
 
 //defining these as the actual pwm channels we are using
-//define pwm channels 
 #define pwm1  LATAbits.LATA0  
 #define pwm2  LATAbits.LATA1
 #define pwm3  LATAbits.LATA2
@@ -65,13 +64,13 @@
 // type define 
 //---------------------------
 typedef unsigned char int8;
-typedef unsigned int  int16;
+typedef unsigned int int16;
 typedef unsigned long int32;
 
 //---------------------------
 // functions
 //---------------------------
-void INIT_PIC (void);
+void INIT_PIC(void);
 
 //---------------------------
 // global variables
@@ -79,209 +78,152 @@ void INIT_PIC (void);
 int8 pwm_channel[4]; //unused global variable, Delete?
 int8 duty_cycle[4];
 int8 counter;
-char direction = 'f';    //global variable that is running the "state machine" to walk to robot
+char direction = 'f'; //global variable that is running the "state machine" to walk to robot
 
 //headers for functions
 void direction_routine();
 //----------------------------------------------
 // Main "function"
 //----------------------------------------------
-void main (void) {
-    
+
+void main(void) {
+
     //moved local variables to helper function
-    
-	INIT_PIC();
-    
-    
+
+    INIT_PIC();
+
+
     // default angles 
     duty_cycle[0] = 45;
     duty_cycle[1] = 45;
     duty_cycle[2] = 45;
     duty_cycle[3] = 45;
 
-	while(1){
-    //put real logic here
-    if (PIR3bits.RC2IF) {				    // wait for the receive flag to be set
-			PIR3bits.RC2IF = 0;				// clear the flag for the next read
-            
+    while (1) {
+        //put real logic here
+        if (PIR3bits.RC2IF) { // wait for the receive flag to be set
+            PIR3bits.RC2IF = 0; // clear the flag for the next read
+
             // if some counter >= 50 switch state
             // control switch 
-			switch (RCREG2) {				// and do one of the following based on that key
-			//--------------------------------------------
-			// Reply with help menu
-			//--------------------------------------------
-			case '?':
-                printf("\r\n");
-				printf("-------------HELP------------\r\n");
-				printf("?: help menu\r\n");
-				printf("o: k\r\n");
-				break;
+            switch (RCREG2) { // and do one of the following based on that key
+                    //--------------------------------------------
+                    // Reply with help menu
+                    //--------------------------------------------
+                case '?':
+                    printf("\r\n");
+                    printf("-------------HELP------------\r\n");
+                    printf("?: help menu\r\n");
+                    printf("o: k\r\n");
+                    break;
 
-			//--------------------------------------------
-			// Reply with "k", used for PC to PIC test
-			//--------------------------------------------
-			case 'o':
-				printf("o:	ok\r\n");
-				break;
-            //--------------------------------------------
-            // increment/decrement duty cycle 
-			// Reply with red duty cycle value 
-			//--------------------------------------------
-            case'i':
-                printf("light should be on");
-                LATCbits.LATC1 ^= 1; 
-                break;
-                
-             // put case change direction 
-                // calls function with other switch (function not in code yet)
-			//--------------------------------------------
-			// If something unknown is hit, tell user
-			//--------------------------------------------
-			default:
-				printf("Unknown key %c\r\n",RCREG2);
-				break;
+                    //--------------------------------------------
+                    // Reply with "k", used for PC to PIC test
+                    //--------------------------------------------
+                case 'o':
+                    printf("o:	ok\r\n");
+                    break;
+                    //--------------------------------------------
+                    // increment/decrement duty cycle 
+                    // Reply with red duty cycle value 
+                    //--------------------------------------------
+                case'i':
+                    printf("light should be on");
+                    LATCbits.LATC1 ^= 1;
+                    break;
+                    
+                    //--------------------------------------------
+                    // change the direction of your robot
+                    //--------------------------------------------
+                case'c':
+                    printf("which direction?\r\n");
+                    while (PIR3bits.RC2IF == 0);
+                    PIR3bits.RC2IF = 0;
+                    printf("direction is %s/r/n", RCREG2);
+                    direction = RCREG2;
 
-			} // end switch
-			printf("> ");		// print a nice command prompt for the user
-            
+                    //--------------------------------------------
+                    // If something unknown is hit, tell user
+                    //--------------------------------------------
+                default:
+                    printf("Unknown key %c\r\n", RCREG2);
+                    break;
+
+            } // end switch
+            printf("> "); // print a nice command prompt for the user
+
             //function written on sunday goes here
             direction_routine();
-            
-            
-            
-            
-     } // end if 
+
+
+
+
+        } // end if 
     } //end while 
 } // end main
 
 //----------------------------------------------
 // INIT_PIC
 //----------------------------------------------
-void INIT_PIC (void) {
 
-	OSCCONbits.IRCF2  = 1;		  // Setup a 64Mhz internal
-	OSCCONbits.IRCF1  = 1;
-	OSCCONbits.IRCF0  = 1;
-	OSCTUNEbits.PLLEN = 1;	
-    
+void INIT_PIC(void) {
+
+    OSCCONbits.IRCF2 = 1; // Setup a 64Mhz internal
+    OSCCONbits.IRCF1 = 1;
+    OSCCONbits.IRCF0 = 1;
+    OSCTUNEbits.PLLEN = 1;
+
     // ---------------Setup the serial port------------------
-	// Aiming for a baud rate of 9600
-	// BAUD = FOSC/[64*(SPBRGH+1)]
-	// SPBRGH = 64Mhz/ 9.6k/64 =  104
-	TXSTA2bits.TXEN = 1;
-	TXSTA2bits.SYNC = 0;
-	TXSTA2bits.BRGH = 0;
-	BAUDCON2bits.BRG16 = 0;
-	RCSTA2bits.CREN = 1;
-	SPBRG2 = 104;
-	RCSTA2bits.SPEN = 1;    
-    
+    // Aiming for a baud rate of 9600
+    // BAUD = FOSC/[64*(SPBRGH+1)]
+    // SPBRGH = 64Mhz/ 9.6k/64 =  104
+    TXSTA2bits.TXEN = 1;
+    TXSTA2bits.SYNC = 0;
+    TXSTA2bits.BRGH = 0;
+    BAUDCON2bits.BRG16 = 0;
+    RCSTA2bits.CREN = 1;
+    SPBRG2 = 104;
+    RCSTA2bits.SPEN = 1;
+
     //pin config 
-    TRISCbits.TRISC1 = 0;         // RC1 is GPIO output 
-	TRISAbits.TRISA0 = 0;		  // RA0 is GPIO output
-	TRISAbits.TRISA1 = 0;		  // RA1 is GPIO output
-    TRISAbits.TRISA2 = 0;         // RA2 is GPIO output
-    TRISAbits.TRISA3 = 0;         // RA3 is GPIO output 
-    
+    TRISCbits.TRISC1 = 0; // RC1 is GPIO output 
+    TRISAbits.TRISA0 = 0; // RA0 is GPIO output
+    TRISAbits.TRISA1 = 0; // RA1 is GPIO output
+    TRISAbits.TRISA2 = 0; // RA2 is GPIO output
+    TRISAbits.TRISA3 = 0; // RA3 is GPIO output 
+
     //Timer 0 
-	T0CON = 0;					  // Funky power-on defaults, see page 159
-	TMR0L = 0;
-	T0CONbits.PSA    = 0;		  // Assign pre scalar to TMR0
-	T0CONbits.T0PS2  = 0;		  // 001 = 1:4		101 = 1:64
-	T0CONbits.T0PS1  = 1;		  // 010 = 1:8		110 = 1:128
-	T0CONbits.T0PS0  = 0;		  // 011 = 1:16		111 = 1:256
-	T0CONbits.T08BIT = 0;		  // 8-bit mode is legacy for older devices
-	T0CONbits.TMR0ON = 1;		  // best to configure devices then turn them on
-    TMR0 = seventeen_ms;          // set initial count value
+    T0CON = 0; // Funky power-on defaults, see page 159
+    TMR0L = 0;
+    T0CONbits.PSA = 0; // Assign pre scalar to TMR0
+    T0CONbits.T0PS2 = 0; // 001 = 1:4		101 = 1:64
+    T0CONbits.T0PS1 = 1; // 010 = 1:8		110 = 1:128
+    T0CONbits.T0PS0 = 0; // 011 = 1:16		111 = 1:256
+    T0CONbits.T08BIT = 0; // 8-bit mode is legacy for older devices
+    T0CONbits.TMR0ON = 1; // best to configure devices then turn them on
+    TMR0 = seventeen_ms; // set initial count value
     //Timer 1
-    T1CONbits.TMR1ON  = 0;        //turn off timer 1
-    T1CONbits.T1CKPS0 = 1;        //set the pre scaler
-    T1CONbits.T1CKPS1 = 1;        //set the pre scaler 11 = 8 bit ';
-    PIE1bits.TMR1IE   = 0;        //ensure that interrupts are disabled
-    T1CONbits.TMR1ON  = 1;        //turn on timer 1
-    
-
-	INTCONbits.TMR0IF = 0;		  // Clear interrupt flag
-	INTCONbits.TMR0IE = 1;		  // Enable TMR0 interrupt
-
-	INTCONbits.GIE = 1;			  // Enable global interrupts
+    T1CONbits.TMR1ON = 0; //turn off timer 1
+    T1CONbits.T1CKPS0 = 1; //set the pre scaler
+    T1CONbits.T1CKPS1 = 1; //set the pre scaler 11 = 8 bit ';
+    PIE1bits.TMR1IE = 0; //ensure that interrupts are disabled
+    T1CONbits.TMR1ON = 1; //turn on timer 1
 
 
-}
+    INTCONbits.TMR0IF = 0; // Clear interrupt flag
+    INTCONbits.TMR0IE = 1; // Enable TMR0 interrupt
 
-//-----------------------------------------------------------------------------
-//Bit banging
-//-----------------------------------------------------------------------------
-void interrupt ISR(void) {
-    
-    INTCONbits.TMR0IF = 0;          // clear flag 
-    LATCbits.LATC1 ^  = 1;			// toggle pin RC1
-    
-    //going to attempt to attempt to rename these based of a #define
-    //turn A0 - A3 on 
-    pwm1 = 1;
-    LATAbits.LATA1 = 1;
-    LATAbits.LATA2 = 1;
-    LATAbits.LATA3 = 1;
-    
-    
-    // use timer 1 to delay 1ms 
-    TMR1 = one_ms;
-    while(PIR1bits.TMR1IF == 0);
-    PIR1bits.TMR1IF = 0; 
-         
-    //this entire for loop will take 1ms
-    for (int i = 0; i < 180; i++) {
-        
-        //adjust duty cycle of each pin 
-        // duty RA0
-        if (duty_cycle[0] < i)
-             pwm1 = 0;
-        else pwm1 = 1;
-        //duty  RA1
-        if (duty_cycle[1] < i)
-             LATAbits.LATA1 = 0;
-        else LATAbits.LATA1 = 1;
-        //duty RA2
-        if (duty_cycle[2] < i)
-             LATAbits.LATA2 = 0;
-        else LATAbits.LATA2 = 1;
-        //duty RA3
-        if (duty_cycle[3] < i)
-             LATAbits.LATA3 = 0;
-        else LATAbits.LATA3 = 1;
-        
-        // delay for 5us 
-        PIR1bits.TMR1IF = 0;          // clear incase 
-        TMR1 = five_us;           
-        while(PIR1bits.TMR1IF == 0);    
-        PIR1bits.TMR1IF = 0;
-    }//end for loop
-   
-    LATCbits.LATC1 ^= 1;			  // toggle pin so 
-    TMR0 = seventeen_ms;
-    //global variable to count how many times we have gone through isr
-    counter++;  //unsure of exactly where this will be used for now
-    //would we want to our direction routine here to update all the values?
-} // end tmr0_isr
+    INTCONbits.GIE = 1; // Enable global interrupts
 
-
-//-----------------------------------------------------------------------------
-// Helper function needed to point PRINTF to the second USART
-//-----------------------------------------------------------------------------
-void putch(char c) {
-    
-    while( ! TX2IF)
-        continue;
-    TX2REG = c;
 
 }
 
 //-----------------------------------------------------------------------------
 // Function to change the direction of the robot
 //-----------------------------------------------------------------------------
-void direction_routine() {
-    static int8 direction_state = 1;    //static variable to remember the state that we are in. 
+
+void direction_routine(int8 direction_state) {
+
     switch (direction) {
 
             //--------------------------------------------
@@ -317,14 +259,116 @@ void direction_routine() {
                 duty_cycle[2] = 45;
                 duty_cycle[3] = 180;
             }
+
             //--------------------------------------------
             // left state 
             //--------------------------------------------
-            //copy pasta 
+        case 'l':
+            if (direction_state = 0) {
+                duty_cycle[0] = 180; // test angles 
+                duty_cycle[1] = 45;
+                duty_cycle[2] = 180;
+                duty_cycle[3] = 45;
+            } else {
+                duty_cycle[0] = 45; // test angles 
+                duty_cycle[1] = 180;
+                duty_cycle[2] = 45;
+                duty_cycle[3] = 180;
+            }
             //--------------------------------------------
             // backward state 
             //--------------------------------------------
-            // copy pasta 
+        case 'b':
+            if (direction_state = 0) {
+                duty_cycle[0] = 180; // test angles 
+                duty_cycle[1] = 45;
+                duty_cycle[2] = 180;
+                duty_cycle[3] = 45;
+            } else {
+                duty_cycle[0] = 45; // test angles 
+                duty_cycle[1] = 180;
+                duty_cycle[2] = 45;
+                duty_cycle[3] = 180;
+            }
 
     }
 }
+
+//-----------------------------------------------------------------------------
+//Bit banging
+//-----------------------------------------------------------------------------
+
+void interrupt ISR(void) {
+
+    static int8 direction_change = 0;
+    INTCONbits.TMR0IF = 0; // clear flag 
+    LATCbits.LATC1 ^ = 1; // toggle pin RC1
+
+    //going to attempt to attempt to rename these based of a #define
+    //turn A0 - A3 on 
+    pwm1 = 1;
+    pwm2 = 1;
+    pwm3 = 1;
+    pwm4 = 1;
+
+
+    // use timer 1 to delay 1ms 
+    TMR1 = one_ms;
+    while (PIR1bits.TMR1IF == 0);
+    PIR1bits.TMR1IF = 0;
+
+    //this entire for loop will take 1ms
+    for (int i = 0; i < 180; i++) {
+
+        //adjust duty cycle of each pin 
+        // duty RA0
+        if (duty_cycle[0] < i)
+            pwm1 = 0;
+        else pwm1 = 1;
+        //duty  RA1
+        if (duty_cycle[1] < i)
+            LATAbits.LATA1 = 0;
+        else LATAbits.LATA1 = 1;
+        //duty RA2
+        if (duty_cycle[2] < i)
+            LATAbits.LATA2 = 0;
+        else LATAbits.LATA2 = 1;
+        //duty RA3
+        if (duty_cycle[3] < i)
+            LATAbits.LATA3 = 0;
+        else LATAbits.LATA3 = 1;
+
+        // delay for 5us 
+        PIR1bits.TMR1IF = 0; // clear incase 
+        TMR1 = five_us;
+        while (PIR1bits.TMR1IF == 0);
+        PIR1bits.TMR1IF = 0;
+    }//end for loop
+
+    LATCbits.LATC1 ^= 1; // toggle pin so 
+    TMR0 = seventeen_ms;
+
+    //global variable to count how many times we have gone through isr
+    counter++;
+    if (counter >= 50) {
+
+        counter = 0;
+        // toggle direction change call function leave
+        direction_change ^= 1;
+        direction_routine(direction_change);
+    }
+} // end tmr0_isr
+
+
+//-----------------------------------------------------------------------------
+// Helper function needed to point PRINTF to the second USART
+//-----------------------------------------------------------------------------
+
+void putch(char c) {
+
+    while (!TX2IF)
+        continue;
+    TX2REG = c;
+
+}
+
