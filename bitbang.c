@@ -15,7 +15,10 @@
 //- assignment, or course failure and a report to the Academic Dishonesty
 //- Board.
 //------------------------------------------------------------------------
-#include <p18F26k22.h>
+
+#include <xc.h>
+#include <stdio.h>
+#include <pic18f26k22.h>
 
 /* Set up the configuration bits */
 #pragma config FOSC = INTIO67
@@ -40,13 +43,40 @@
 #pragma config XINST = OFF			// Instruction set extension and Indexed Addressing mode disabled (Legacy mode) 
 #pragma config DEBUG = ON			// Block 0 (000800-003FFFh) code-protected 
 
+//---------------------------
+//defines 
+//---------------------------
+#define _XTAL_FREQ   64000000   //not sure if you needed the equal sign I took it out
 
-#define _XTAL_FREQ = 64000000
+// define times
+#define one_ms       63536
+#define one_half_ms  62536 
+#define two_ms       61536
+#define seventeen_ms 31536
+#define eleven_us    65541
 
+//define pwm channels 
+#define pwm1  
+#define pwm2
+#define pwm3 
+#define pwm4 
+//---------------------------
+// type define 
+//---------------------------
 typedef unsigned char int8;
 typedef unsigned int  int16;
 typedef unsigned long int32;
 
+//---------------------------
+// functions
+//---------------------------
+void INIT_PIC (void);
+
+//---------------------------
+// globals
+//---------------------------
+int8 pwm_channel[4];
+int8 duty_cycle[4];
 
 /*
 //----------------------------------------------------
@@ -59,17 +89,12 @@ void interrupt_at_high_vector(void) {
 }
 #pragma code 
 */
-void INIT_PIC (void);
-
-
-
-int8 pwm_channel[4];
-int8 duty_cycle[4];
 
 //----------------------------------------------
 // Main "function"
 //----------------------------------------------
 void main (void) {
+    
 	INIT_PIC();
     
     pwm_channel[0] = PORTAbits.RA0;
@@ -82,9 +107,48 @@ void main (void) {
     duty_cycle[2] = 90;
     duty_cycle[3] = 180;
 
-	while(1);
+	while(1){
     //put real logic here
+    if (PIR3bits.RC2IF) {				// wait for the receive flag to be set
+			PIR3bits.RC2IF = 0;				// clear the flag for the next read
+    
+			switch (RCREG2) {				// and do one of the following based on that key
 
+			//--------------------------------------------
+			// Reply with help menu
+			//--------------------------------------------
+			case '?':
+                printf("\r\n");
+				printf("-------------HELP------------\r\n");
+				printf("?: help menu\r\n");
+				printf("o: k\r\n");
+				break;
+
+			//--------------------------------------------
+			// Reply with "k", used for PC to PIC test
+			//--------------------------------------------
+			case 'o':
+				printf("o:	ok\r\n");
+				break;
+            //--------------------------------------------
+            // increment/decrement duty cycle 
+			// Reply with red duty cycle value 
+			//--------------------------------------------
+            case'i':
+                printf("light should be on");
+                LATCbits.LATC1 ^= 1; 
+                break;
+			//--------------------------------------------
+			// If something unknown is hit, tell user
+			//--------------------------------------------
+			default:
+				printf("Unknown key %c\r\n",RCREG2);
+				break;
+
+			} // end switch
+			printf("> ");		// print a nice command prompt for the user
+     } // end if 
+    } //end while 
 } // end main
 
 //----------------------------------------------
@@ -92,79 +156,101 @@ void main (void) {
 //----------------------------------------------
 void INIT_PIC (void) {
 
-	OSCCONbits.IRCF2 = 1;		// Setup a 64Mhz internal
-	OSCCONbits.IRCF1 = 1;
-	OSCCONbits.IRCF0 = 1;
+	OSCCONbits.IRCF2  = 1;		  // Setup a 64Mhz internal
+	OSCCONbits.IRCF1  = 1;
+	OSCCONbits.IRCF0  = 1;
 	OSCTUNEbits.PLLEN = 1;	
-
-	TRISAbits.TRISA3 = 1;		// Upper button is a digital
-	ANSELAbits.ANSA3 = 0;
-
-	TRISCbits.TRISC1 = 0;		// RC1 is GPIO output
-	TRISCbits.TRISC2 = 0;		// RC2 is GPIO output
-
-	T0CON = 0;					// Funky power-on defaults, see page 159
+    
+    // ---------------Setup the serial port------------------
+	// Aiming for a baud rate of 9600
+	// BAUD = FOSC/[64*(SPBRGH+1)]
+	// SPBRGH = 64Mhz/ 9.6k/64 =  104
+	TXSTA2bits.TXEN = 1;
+	TXSTA2bits.SYNC = 0;
+	TXSTA2bits.BRGH = 0;
+	BAUDCON2bits.BRG16 = 0;
+	RCSTA2bits.CREN = 1;
+	SPBRG2 = 104;
+	RCSTA2bits.SPEN = 1;    
+    
+    //pin config 
+    TRISCbits.TRISC1 = 0;         // RC1 is GPIO output 
+	TRISAbits.TRISA1 = 0;		  // RA1 is GPIO output
+	TRISAbits.TRISA2 = 0;		  // RA2 is GPIO output
+    TRISAbits.TRISA3 = 0;         // RA3 is GPIO output
+    TRISAbits.TRISA4 = 0;         // RA4 is GPIO output 
+    
+    //Timer 0 
+	T0CON = 0;					  // Funky power-on defaults, see page 159
 	TMR0L = 0;
-	T0CONbits.PSA = 0;			// Assign prescalar to TMR0
-	T0CONbits.T0PS2 = 0;		// 001 = 1:4		101 = 1:64
-	T0CONbits.T0PS1 = 1;		// 010 = 1:8		110 = 1:128
-	T0CONbits.T0PS0 = 0;		// 011 = 1:16		111 = 1:256
-	T0CONbits.T08BIT = 1;		// 8-bit mode is legacy for older devices
-	T0CONbits.TMR0ON = 1;		// best to configure devices then turn them on
-    
-    T2CONbits.TMR2ON =0;        //turn off timer 2
-    T2CONbits.T2CKPS0 = 1;      //set the prescaler
-    T2CONbits.T2CKPS1 = 0;      //set the prescaler
-    PIE1bits.TMR2IE =0;         //ensure that interrupts are disabled
-    T2CONbits.TMR2ON =1;        //turn on timer 2
+	T0CONbits.PSA    = 0;		  // Assign pre scalar to TMR0
+	T0CONbits.T0PS2  = 0;		  // 001 = 1:4		101 = 1:64
+	T0CONbits.T0PS1  = 1;		  // 010 = 1:8		110 = 1:128
+	T0CONbits.T0PS0  = 0;		  // 011 = 1:16		111 = 1:256
+	T0CONbits.T08BIT = 0;		  // 8-bit mode is legacy for older devices
+	T0CONbits.TMR0ON = 1;		  // best to configure devices then turn them on
+    TMR0 = seventeen_ms;          // set initial count value
+    //Timer 1
+    T1CONbits.TMR1ON  = 0;        //turn off timer 1
+    T1CONbits.T1CKPS0 = 1;        //set the pre scaler
+    T1CONbits.T1CKPS1 = 1;        //set the pre scaler 11 = 8 bit ';
+    PIE1bits.TMR1IE   = 0;        //ensure that interrupts are disabled
+    T1CONbits.TMR1ON  = 1;        //turn on timer 1
     
 
-	INTCONbits.TMR0IF = 0;		// Clear interrupt flag
-	INTCONbits.TMR0IE = 1;		// Enable TMR0 interrupt
+	INTCONbits.TMR0IF = 0;		  // Clear interrupt flag
+	INTCONbits.TMR0IE = 1;		  // Enable TMR0 interrupt
 
-	INTCONbits.GIE = 1;			// Enable global interrupts
+	INTCONbits.GIE = 1;			  // Enable global interrupts
 
 
 }
 
 //-----------------------------------------------------------------------------
-//interrupt vector
+//Bit banging
 //-----------------------------------------------------------------------------
-//#pragma interrupt high_isr
 void interrupt ISR(void) {
-    static int8 state =0;
+    
     INTCONbits.TMR0IF =0;
-
-    if(state == 0){
-    // have all the pins go high
+    LATCbits.LATC1 ^= 1;			// toggle pin s
     for (int j = 0; j < 4; j++) {
         pwm_channel[j] = 1;
     }
-    //wait 1ms
-    state = 1;
-    }
     
-    
-    if(state ==1)
-    {
-    //__delay_ms(1.0);
+    // use timer 1 delay 1 ms 
+    TMR1 = one_ms;
+    //printf("in isr 1st");
+    while(PIR1bits.TMR1IF == 0);
+    PIR1bits.TMR1IF = 0; 
 
     //this entire for loop will take 2 ms
-    for (int i = 0; i < 181; i++) {
+    for (int i = 0; i < 180; i++) {
         for (int j = 0; j < 4; j++) {
-            if (duty_cycle[j] < i)
+            if (duty_cycle[j] < i) 
                 pwm_channel[j] = 0;
+            
             else pwm_channel[j] = 1;
+            
+            PIR1bits.TMR1IF = 0;
         }
         
-        //delay 11us  
+        //TMR1 = eleven_us;
+       // while(PIR1bits.TMR1IF == 0);    // this shit ant working here 
+        PIR1bits.TMR1IF = 0;
     }
-    state =2;
-    }
-    if (state ==2)
-    {
-    WRITETIMER0(31536);
-    state =0;
-    }
-
+    LATCbits.LATC1 ^= 1;			// toggle pin so 
+    TMR0 = seventeen_ms;
+    
 } // end tmr0_isr
+
+
+//-----------------------------------------------------------------------------
+// Helper function needed to point PRINTF to the second USART
+//-----------------------------------------------------------------------------
+void putch(char c) {
+    
+    while( ! TX2IF)
+        continue;
+    TX2REG = c;
+
+}
