@@ -7816,18 +7816,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 "230
 [e $ ! == -> _direction_change `i -> 0 `i 1129  ]
 {
-[; ;bitbang.c: 231: duty_cycle[0] = 179;
+[; ;bitbang.c: 231: duty_cycle[0] = 180;
 "231
-[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 179 `i `uc ]
-[; ;bitbang.c: 232: duty_cycle[1] = 179;
+[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
+[; ;bitbang.c: 232: duty_cycle[1] = 180;
 "232
-[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 179 `i `uc ]
-[; ;bitbang.c: 233: duty_cycle[2] = 179;
+[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
+[; ;bitbang.c: 233: duty_cycle[2] = 180;
 "233
-[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 179 `i `uc ]
-[; ;bitbang.c: 234: duty_cycle[3] = 179;
+[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
+[; ;bitbang.c: 234: duty_cycle[3] = 180;
 "234
-[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 179 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
 "235
 }
 [; ;bitbang.c: 235: } else {
@@ -8123,9 +8123,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bitbang.c: 356: counter++;
 "356
 [e ++ _counter -> -> 1 `i `uc ]
-[; ;bitbang.c: 357: if (counter >= 100) {
+[; ;bitbang.c: 357: if (counter >= 25) {
 "357
-[e $ ! >= -> _counter `i -> 100 `i 1154  ]
+[e $ ! >= -> _counter `i -> 25 `i 1154  ]
 {
 [; ;bitbang.c: 359: counter = 0;
 "359

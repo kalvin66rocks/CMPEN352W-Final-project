@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Sun Apr 10 17:12:05 2016
+                                                                                               Sun Apr 10 17:24:48 2016
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	18F26K22
@@ -1193,8 +1193,8 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1162                           ;bitbang.c: 356: counter++;
   1163  00010C  2A25               	incf	_counter,f,c
   1164                           
-  1165                           ;bitbang.c: 357: if (counter >= 100) {
-  1166  00010E  0E63               	movlw	99
+  1165                           ;bitbang.c: 357: if (counter >= 25) {
+  1166  00010E  0E18               	movlw	24
   1167  000110  6425               	cpfsgt	_counter,c
   1168  000112  D00B               	goto	i2l117
   1169                           
@@ -1307,20 +1307,20 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1271  001166  A4D8               	btfss	status,2,c
   1272  001168  D009               	goto	i2l832
   1273                           
-  1274                           ;bitbang.c: 231: duty_cycle[0] = 179;
-  1275  00116A  0EB3               	movlw	179
+  1274                           ;bitbang.c: 231: duty_cycle[0] = 180;
+  1275  00116A  0EB4               	movlw	180
   1276  00116C  6E1D               	movwf	_duty_cycle,c
   1277                           
-  1278                           ;bitbang.c: 232: duty_cycle[1] = 179;
-  1279  00116E  0EB3               	movlw	179
+  1278                           ;bitbang.c: 232: duty_cycle[1] = 180;
+  1279  00116E  0EB4               	movlw	180
   1280  001170  6E1E               	movwf	_duty_cycle+1,c
   1281                           
-  1282                           ;bitbang.c: 233: duty_cycle[2] = 179;
-  1283  001172  0EB3               	movlw	179
+  1282                           ;bitbang.c: 233: duty_cycle[2] = 180;
+  1283  001172  0EB4               	movlw	180
   1284  001174  6E1F               	movwf	_duty_cycle+2,c
   1285                           
-  1286                           ;bitbang.c: 234: duty_cycle[3] = 179;
-  1287  001176  0EB3               	movlw	179
+  1286                           ;bitbang.c: 234: duty_cycle[3] = 180;
+  1287  001176  0EB4               	movlw	180
   1288  001178  6E20               	movwf	_duty_cycle+3,c
   1289                           
   1290                           ;bitbang.c: 235: } else {
@@ -1863,7 +1863,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Sun Apr 10 17:12:05 2016
+Symbol Table                                                                                   Sun Apr 10 17:24:48 2016
 
                         l73 1106                         l120 1322                         l952 1232  
                        l962 125C                         l956 1242                         l980 10A2  

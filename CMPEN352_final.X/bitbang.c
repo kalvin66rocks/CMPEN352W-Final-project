@@ -228,10 +228,10 @@ void direction_routine() {
         case 'f':
 
             if (direction_change == 0) {
-                duty_cycle[0] = 179; // test angles 
-                duty_cycle[1] = 179;
-                duty_cycle[2] = 179;
-                duty_cycle[3] = 179;
+                duty_cycle[0] = 180; // test angles 
+                duty_cycle[1] = 180;
+                duty_cycle[2] = 180;
+                duty_cycle[3] = 180;
             } else {
                 duty_cycle[0] = 0; // test angles 
                 duty_cycle[1] = 0;
@@ -354,7 +354,7 @@ void interrupt ISR(void) {
 
     //global variable to count how many times we have gone through isr
     counter++;
-    if (counter >= 100) {
+    if (counter >= 25) {
 
         counter = 0;
         // toggle direction change call function leave

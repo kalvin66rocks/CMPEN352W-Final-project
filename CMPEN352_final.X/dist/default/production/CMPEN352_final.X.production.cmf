@@ -25,7 +25,7 @@ intcode CODE 0 8 8 15E 1
 smallconst SMALLCONST 0 1000 1000 8E 1
 dataCOMRAM COMRAM 1 27 27 1 1
 bssCOMRAM COMRAM 1 1D 1D A 1
-$C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
+$C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 166 166 4 1
@@ -249,30 +249,30 @@ FE intcode CODE >349:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352
 1138 text0 CODE >110:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
 1154 text0 CODE >154:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
 1160 text0 CODE >103:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12F4 cinit CODE >915:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-12F4 cinit CODE >917:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-12F4 cinit CODE >920:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-12F4 cinit CODE >950:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-12F8 cinit CODE >951:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-12FA cinit CODE >952:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-12FA cinit CODE >953:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-12FC cinit CODE >954:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-12FE cinit CODE >955:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1300 cinit CODE >960:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1302 cinit CODE >961:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1304 cinit CODE >962:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1306 cinit CODE >963:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1308 cinit CODE >964:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-130A cinit CODE >965:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-130C cinit CODE >966:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-130E cinit CODE >967:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1312 cinit CODE >973:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1312 cinit CODE >975:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1314 cinit CODE >976:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1316 cinit CODE >978:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-1318 cinit CODE >979:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-131A cinit CODE >980:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
-131C cinit CODE >981:C:\Users\KALVI_~1\AppData\Local\Temp\s79c.
+12F4 cinit CODE >915:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+12F4 cinit CODE >917:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+12F4 cinit CODE >920:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+12F4 cinit CODE >950:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+12F8 cinit CODE >951:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+12FA cinit CODE >952:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+12FA cinit CODE >953:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+12FC cinit CODE >954:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+12FE cinit CODE >955:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1300 cinit CODE >960:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1302 cinit CODE >961:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1304 cinit CODE >962:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1306 cinit CODE >963:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1308 cinit CODE >964:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+130A cinit CODE >965:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+130C cinit CODE >966:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+130E cinit CODE >967:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1312 cinit CODE >973:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1312 cinit CODE >975:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1314 cinit CODE >976:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1316 cinit CODE >978:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+1318 cinit CODE >979:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+131A cinit CODE >980:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
+131C cinit CODE >981:C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -291,17 +291,17 @@ __Hspace_1 29 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\CMPEN352_final.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\CMPEN352_final.X.production.obj
 _T1CONbits FCD 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 ISR@i 12 0 COMRAM 1 cstackCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production\CMPEN352_final.X.production.obj
 _TMR0 FD6 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 _TMR1 FCE 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
+___sp 0 0 STACK 2 stack C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
 _main 108E 0 CODE 0 text0 dist/default/production\CMPEN352_final.X.production.obj
 btemp 28 0 COMRAM 1 temp dist/default/production\CMPEN352_final.X.production.obj
-start 166 0 CODE 0 init C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
+start 166 0 CODE 0 init C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
@@ -313,11 +313,11 @@ printf@f 15 0 COMRAM 1 cstackCOMRAM dist/default/production\CMPEN352_final.X.pro
 _T0CONbits FD5 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __CFG_CCP3MX$PORTB5 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\CMPEN352_final.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
-intlevel0 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
-intlevel1 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
-intlevel2 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
-intlevel3 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
+__accesstop 60 0 ABS 0 - C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
+intlevel0 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
+intlevel1 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
+intlevel2 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
+intlevel3 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __size_of_direction_routine 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 _OSCCONbits FD3 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
@@ -328,8 +328,8 @@ __Hclrtext 0 0 ABS 0 clrtext dist/default/production\CMPEN352_final.X.production
 __pidataCOMRAM 132C 0 CODE 0 idataCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 printf@flag 19 0 COMRAM 1 cstackCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\CMPEN352_final.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\CMPEN352_final.X.production.obj
@@ -386,7 +386,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production\CMPEN352_final.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\CMPEN352_final.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\CMPEN352_final.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\CMPEN352_final.X.production.obj
-__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\CMPEN352_final.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\CMPEN352_final.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\CMPEN352_final.X.production.obj
@@ -470,8 +470,8 @@ _LATCbits F8B 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 _RCSTA2bits F71 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\CMPEN352_final.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\CMPEN352_final.X.production.obj
-stackhi F37 0 ABS 0 - C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
-stacklo 60 0 ABS 0 - C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
+stackhi F37 0 ABS 0 - C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
+stacklo 60 0 ABS 0 - C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\CMPEN352_final.X.production.obj
 _INIT_PIC 12A0 0 CODE 0 text3 dist/default/production\CMPEN352_final.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\CMPEN352_final.X.production.obj
@@ -502,7 +502,7 @@ __ptext2 1320 0 CODE 0 text2 dist/default/production\CMPEN352_final.X.production
 __ptext3 12A0 0 CODE 0 text3 dist/default/production\CMPEN352_final.X.production.obj
 __ptext5 1162 0 CODE 0 text5 dist/default/production\CMPEN352_final.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\CMPEN352_final.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop C:\Users\KALVI_~1\AppData\Local\Temp\s79c.obj
+__ramtop 1000 0 RAM 0 ramtop C:\Users\KALVI_~1\AppData\Local\Temp\sb9k.obj
 putch@c 14 0 COMRAM 1 cstackCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __Lpowerup 166 0 CODE 0 powerup dist/default/production\CMPEN352_final.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\CMPEN352_final.X.production.obj
