@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
+SOURCEFILES_QUOTED_IF_SPACED=bitbang.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/620234884/bitbang.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/620234884/bitbang.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/bitbang.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/bitbang.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/620234884/bitbang.p1
+OBJECTFILES=${OBJECTDIR}/bitbang.p1
 
 # Source Files
-SOURCEFILES=C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
+SOURCEFILES=bitbang.c
 
 
 CFLAGS=
@@ -81,22 +81,22 @@ MP_PROCESSOR_OPTION=18F26K22
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/620234884/bitbang.p1: C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/620234884" 
-	@${RM} ${OBJECTDIR}/_ext/620234884/bitbang.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/620234884/bitbang.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/620234884/bitbang.p1  C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c 
-	@-${MV} ${OBJECTDIR}/_ext/620234884/bitbang.d ${OBJECTDIR}/_ext/620234884/bitbang.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/620234884/bitbang.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/bitbang.p1: bitbang.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/bitbang.p1.d 
+	@${RM} ${OBJECTDIR}/bitbang.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/bitbang.p1  bitbang.c 
+	@-${MV} ${OBJECTDIR}/bitbang.d ${OBJECTDIR}/bitbang.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/bitbang.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/_ext/620234884/bitbang.p1: C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/620234884" 
-	@${RM} ${OBJECTDIR}/_ext/620234884/bitbang.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/620234884/bitbang.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/620234884/bitbang.p1  C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c 
-	@-${MV} ${OBJECTDIR}/_ext/620234884/bitbang.d ${OBJECTDIR}/_ext/620234884/bitbang.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/620234884/bitbang.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/bitbang.p1: bitbang.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/bitbang.p1.d 
+	@${RM} ${OBJECTDIR}/bitbang.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/bitbang.p1  bitbang.c 
+	@-${MV} ${OBJECTDIR}/bitbang.d ${OBJECTDIR}/bitbang.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/bitbang.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

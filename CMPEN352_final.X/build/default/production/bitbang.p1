@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"73 C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
+"73 bitbang.c
 [v _INIT_PIC `(v ~T0 @X0 0 ef ]
 "6272 C:\Program Files (x86)\Microchip\xc8\v1.36\include\pic18f26k22.h
 [s S397 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -7357,7 +7357,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
-"24 C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c
+"24 bitbang.c
 [p x FOSC=INTIO67 ]
 "25
 [p x PLLCFG=ON ]
@@ -7733,6 +7733,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 "235
 }
 [; ;bitbang.c: 235: }
+[; ;bitbang.c: 237: TMR1 = 65525;
+"237
+[e = _TMR1 -> -> 65525 `l `us ]
+[; ;bitbang.c: 238: while(PIR1bits.TMR1IF == 0);
+"238
+[e $U 1112  ]
+[e :U 1113 ]
+[e :U 1112 ]
+[e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1113  ]
+[e :U 1114 ]
 [; ;bitbang.c: 239: PIR1bits.TMR1IF = 0;
 "239
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
@@ -7745,40 +7755,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 "240
 }
 [; ;bitbang.c: 240: }
-[; ;bitbang.c: 241: LATCbits.LATC1 ^= 1;
-"241
-[e =^ . . _LATCbits 0 1 -> -> 1 `i `uc ]
-[; ;bitbang.c: 242: TMR0 = 31536;
+[; ;bitbang.c: 242: LATCbits.LATC1 ^= 1;
 "242
+[e =^ . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[; ;bitbang.c: 243: TMR0 = 31536;
+"243
 [e = _TMR0 -> -> 31536 `i `us ]
-[; ;bitbang.c: 244: }
-"244
+[; ;bitbang.c: 245: }
+"245
 [e :UE 1097 ]
 }
-"250
+"251
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;bitbang.c: 250: void putch(char c) {
+[; ;bitbang.c: 251: void putch(char c) {
 [e :U _putch ]
 [v _c `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;bitbang.c: 252: while( ! TX2IF)
-"252
-[e $U 1113  ]
-[e :U 1114 ]
-[; ;bitbang.c: 253: continue;
+[; ;bitbang.c: 253: while( ! TX2IF)
 "253
-[e $U 1113  ]
-[e :U 1113 ]
-"252
-[e $ ! _TX2IF 1114  ]
-[e :U 1115 ]
-[; ;bitbang.c: 254: TX2REG = c;
+[e $U 1116  ]
+[e :U 1117 ]
+[; ;bitbang.c: 254: continue;
 "254
+[e $U 1116  ]
+[e :U 1116 ]
+"253
+[e $ ! _TX2IF 1117  ]
+[e :U 1118 ]
+[; ;bitbang.c: 255: TX2REG = c;
+"255
 [e = _TX2REG _c ]
-[; ;bitbang.c: 256: }
-"256
-[e :UE 1112 ]
+[; ;bitbang.c: 257: }
+"257
+[e :UE 1115 ]
 }
 [p f _printf 8912896 ]
 [a 6C 108 105 103 104 116 32 115 104 111 117 108 100 32 98 101 32 111 110 0 ]

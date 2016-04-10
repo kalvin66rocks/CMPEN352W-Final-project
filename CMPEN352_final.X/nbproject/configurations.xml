@@ -12,7 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>C:/Users/Mike/Documents/GitHub/CMPEN352W-Final-project/bitbang.c</itemPath>
+      <itemPath>bitbang.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

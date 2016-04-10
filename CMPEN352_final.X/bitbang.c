@@ -53,7 +53,7 @@
 #define one_half_ms  62536 
 #define two_ms       61536
 #define seventeen_ms 31536
-#define eleven_us    65541
+#define eleven_us    65525
 
 //define pwm channels 
 #define pwm1  
@@ -222,7 +222,7 @@ void interrupt ISR(void) {
     //printf("in isr 1st");
     while(PIR1bits.TMR1IF == 0);
     PIR1bits.TMR1IF = 0; 
-
+         
     //this entire for loop will take 2 ms
     for (int i = 0; i < 180; i++) {
         for (int j = 0; j < 4; j++) {
@@ -234,10 +234,11 @@ void interrupt ISR(void) {
             PIR1bits.TMR1IF = 0;
         }
         
-        //TMR1 = eleven_us;
-       // while(PIR1bits.TMR1IF == 0);    // this shit ant working here 
+        TMR1 = eleven_us;
+        while(PIR1bits.TMR1IF == 0);    // this shit ant working here 
         PIR1bits.TMR1IF = 0;
     }
+   
     LATCbits.LATC1 ^= 1;			// toggle pin so 
     TMR0 = seventeen_ms;
     
