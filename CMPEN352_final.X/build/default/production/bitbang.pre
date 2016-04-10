@@ -8919,22 +8919,23 @@ int8 duty_cycle[4];
 # 96
 void main (void) {
 
+
+char direction = 'f';
+int8 direction_state = 1;
+
 INIT_PIC();
 
-pwm_channel[0] = PORTAbits.RA0;
-pwm_channel[1] = PORTAbits.RA1;
-pwm_channel[2] = PORTAbits.RA2;
-pwm_channel[3] = PORTAbits.RA3;
-
-duty_cycle[0] = 0;
+# 111
+duty_cycle[0] = 45;
 duty_cycle[1] = 45;
-duty_cycle[2] = 90;
-duty_cycle[3] = 180;
+duty_cycle[2] = 45;
+duty_cycle[3] = 45;
 
 while(1){
 
 if (PIR3bits.RC2IF) {
 PIR3bits.RC2IF = 0;
+
 
 switch (RCREG2) {
 
@@ -8971,6 +8972,50 @@ break;
 
 }
 printf("> ");
+
+
+switch(direction){
+
+
+
+
+case 'f':
+
+if(direction_state = 0){
+duty_cycle[0] = 180;
+duty_cycle[1] = 45;
+duty_cycle[2] = 180;
+duty_cycle[3] = 45;
+}
+else{
+duty_cycle[0] = 45;
+duty_cycle[1] = 180;
+duty_cycle[2] = 45;
+duty_cycle[3] = 180;
+}
+
+
+
+
+case 'r':
+
+if(direction_state = 0){
+duty_cycle[0] = 180;
+duty_cycle[1] = 45;
+duty_cycle[2] = 180;
+duty_cycle[3] = 45;
+}
+else{
+duty_cycle[0] = 45;
+duty_cycle[1] = 180;
+duty_cycle[2] = 45;
+duty_cycle[3] = 180;
+}
+
+# 205
+}
+
+
 }
 }
 }
@@ -8985,7 +9030,7 @@ OSCCONbits.IRCF1 = 1;
 OSCCONbits.IRCF0 = 1;
 OSCTUNEbits.PLLEN = 1;
 
-# 168
+# 226
 TXSTA2bits.TXEN = 1;
 TXSTA2bits.SYNC = 0;
 TXSTA2bits.BRGH = 0;
@@ -8996,10 +9041,10 @@ RCSTA2bits.SPEN = 1;
 
 
 TRISCbits.TRISC1 = 0;
+TRISAbits.TRISA0 = 0;
 TRISAbits.TRISA1 = 0;
 TRISAbits.TRISA2 = 0;
 TRISAbits.TRISA3 = 0;
-TRISAbits.TRISA4 = 0;
 
 
 T0CON = 0;
@@ -9032,29 +9077,44 @@ INTCONbits.GIE = 1;
 
 void interrupt ISR(void) {
 
-INTCONbits.TMR0IF =0;
-LATCbits.LATC1 ^= 1;
-for (int j = 0; j < 4; j++) {
-pwm_channel[j] = 1;
-}
+INTCONbits.TMR0IF = 0;
+LATCbits.LATC1 ^ = 1;
+
+
+LATAbits.LATA0 = 1;
+LATAbits.LATA1 = 1;
+LATAbits.LATA2 = 1;
+LATAbits.LATA3 = 1;
+
 
 
 TMR1 = 63536;
-
 while(PIR1bits.TMR1IF == 0);
 PIR1bits.TMR1IF = 0;
 
 
 for (int i = 0; i < 180; i++) {
-for (int j = 0; j < 4; j++) {
-if (duty_cycle[j] < i)
-pwm_channel[j] = 0;
 
-else pwm_channel[j] = 1;
+
+
+if (duty_cycle[0] < i)
+LATAbits.LATA0 = 0;
+else LATAbits.LATA0 = 1;
+
+if (duty_cycle[1] < i)
+LATAbits.LATA1 = 0;
+else LATAbits.LATA1 = 1;
+
+if (duty_cycle[2] < i)
+LATAbits.LATA2 = 0;
+else LATAbits.LATA2 = 1;
+
+if (duty_cycle[3] < i)
+LATAbits.LATA3 = 0;
+else LATAbits.LATA3 = 1;
+
 
 PIR1bits.TMR1IF = 0;
-}
-
 TMR1 = 65525;
 while(PIR1bits.TMR1IF == 0);
 PIR1bits.TMR1IF = 0;
@@ -9065,7 +9125,7 @@ TMR0 = 31536;
 
 }
 
-# 251
+# 324
 void putch(char c) {
 
 while( ! TX2IF)

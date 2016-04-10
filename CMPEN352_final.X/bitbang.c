@@ -53,7 +53,7 @@
 #define one_half_ms  62536 
 #define two_ms       61536
 #define seventeen_ms 31536
-#define eleven_us    65525
+#define five_us    65525
 
 //define pwm channels 
 #define pwm1  
@@ -95,23 +95,30 @@ void interrupt_at_high_vector(void) {
 //----------------------------------------------
 void main (void) {
     
+    //local variables 
+    char direction = 'f';
+    int8 direction_state = 1;
+    
 	INIT_PIC();
     
-    pwm_channel[0] = PORTAbits.RA0;
-    pwm_channel[1] = PORTAbits.RA1;
-    pwm_channel[2] = PORTAbits.RA2;
-    pwm_channel[3] = PORTAbits.RA3;
+    // set channels to respective pins
+    //pwm_channel[0] = PORTAbits.RA0;
+    //pwm_channel[1] = PORTAbits.RA1;
+    //pwm_channel[2] = PORTAbits.RA2;
+    //pwm_channel[3] = PORTAbits.RA3;
     
-    duty_cycle[0] = 0;
+    // default angles 
+    duty_cycle[0] = 45;
     duty_cycle[1] = 45;
-    duty_cycle[2] = 90;
-    duty_cycle[3] = 180;
+    duty_cycle[2] = 45;
+    duty_cycle[3] = 45;
 
 	while(1){
     //put real logic here
-    if (PIR3bits.RC2IF) {				// wait for the receive flag to be set
+    if (PIR3bits.RC2IF) {				    // wait for the receive flag to be set
 			PIR3bits.RC2IF = 0;				// clear the flag for the next read
-    
+            
+            // control switch 
 			switch (RCREG2) {				// and do one of the following based on that key
 
 			//--------------------------------------------
@@ -147,6 +154,57 @@ void main (void) {
 
 			} // end switch
 			printf("> ");		// print a nice command prompt for the user
+            
+            // state switch switch 
+            switch(direction){
+                
+            //--------------------------------------------
+			// forward state 
+			//--------------------------------------------
+                case 'f':
+                    
+                    if(direction_state = 0){
+                        duty_cycle[0] = 180;        // test angles 
+                        duty_cycle[1] = 45;
+                        duty_cycle[2] = 180;
+                        duty_cycle[3] = 45;
+                    }
+                    else{
+                        duty_cycle[0] = 45;        // test angles 
+                        duty_cycle[1] = 180;
+                        duty_cycle[2] = 45;
+                        duty_cycle[3] = 180;
+                    }
+                   
+            //--------------------------------------------
+			// right state 
+			//--------------------------------------------
+                case 'r':
+                    
+                    if(direction_state = 0){
+                        duty_cycle[0] = 180;        // test angles 
+                        duty_cycle[1] = 45;
+                        duty_cycle[2] = 180;
+                        duty_cycle[3] = 45;
+                    }
+                    else{
+                        duty_cycle[0] = 45;        // test angles 
+                        duty_cycle[1] = 180;
+                        duty_cycle[2] = 45;
+                        duty_cycle[3] = 180;
+                    }
+            //--------------------------------------------
+			// left state 
+			//--------------------------------------------
+                    
+            //--------------------------------------------
+			// backward state 
+			//--------------------------------------------
+                
+                
+            }
+            
+            
      } // end if 
     } //end while 
 } // end main
@@ -175,10 +233,10 @@ void INIT_PIC (void) {
     
     //pin config 
     TRISCbits.TRISC1 = 0;         // RC1 is GPIO output 
+	TRISAbits.TRISA0 = 0;		  // RA0 is GPIO output
 	TRISAbits.TRISA1 = 0;		  // RA1 is GPIO output
-	TRISAbits.TRISA2 = 0;		  // RA2 is GPIO output
-    TRISAbits.TRISA3 = 0;         // RA3 is GPIO output
-    TRISAbits.TRISA4 = 0;         // RA4 is GPIO output 
+    TRISAbits.TRISA2 = 0;         // RA2 is GPIO output
+    TRISAbits.TRISA3 = 0;         // RA3 is GPIO output 
     
     //Timer 0 
 	T0CON = 0;					  // Funky power-on defaults, see page 159
@@ -211,35 +269,50 @@ void INIT_PIC (void) {
 //-----------------------------------------------------------------------------
 void interrupt ISR(void) {
     
-    INTCONbits.TMR0IF =0;
-    LATCbits.LATC1 ^= 1;			// toggle pin s
-    for (int j = 0; j < 4; j++) {
-        pwm_channel[j] = 1;
-    }
+    INTCONbits.TMR0IF = 0;          // clear flag 
+    LATCbits.LATC1 ^  = 1;			// toggle pin RC1
     
-    // use timer 1 delay 1 ms 
+    //turn A0 - A3 on 
+    LATAbits.LATA0 = 1;
+    LATAbits.LATA1 = 1;
+    LATAbits.LATA2 = 1;
+    LATAbits.LATA3 = 1;
+    
+    
+    // use timer 1 to delay 1ms 
     TMR1 = one_ms;
-    //printf("in isr 1st");
     while(PIR1bits.TMR1IF == 0);
     PIR1bits.TMR1IF = 0; 
          
-    //this entire for loop will take 2 ms
+    //this entire for loop will take 1ms
     for (int i = 0; i < 180; i++) {
-        for (int j = 0; j < 4; j++) {
-            if (duty_cycle[j] < i) 
-                pwm_channel[j] = 0;
-            
-            else pwm_channel[j] = 1;
-            
-            PIR1bits.TMR1IF = 0;
-        }
         
-        TMR1 = eleven_us;
-        while(PIR1bits.TMR1IF == 0);    // this shit ant working here 
+        //adjust duty cycle of each pin 
+        // duty RA0
+        if (duty_cycle[0] < i)
+             LATAbits.LATA0 = 0;
+        else LATAbits.LATA0 = 1;
+        //duty  RA1
+        if (duty_cycle[1] < i)
+             LATAbits.LATA1 = 0;
+        else LATAbits.LATA1 = 1;
+        //duty RA2
+        if (duty_cycle[2] < i)
+             LATAbits.LATA2 = 0;
+        else LATAbits.LATA2 = 1;
+        //duty RA3
+        if (duty_cycle[3] < i)
+             LATAbits.LATA3 = 0;
+        else LATAbits.LATA3 = 1;
+        
+        // delay for 5us 
+        PIR1bits.TMR1IF = 0;          // clear incase 
+        TMR1 = five_us;           
+        while(PIR1bits.TMR1IF == 0);    
         PIR1bits.TMR1IF = 0;
     }
    
-    LATCbits.LATC1 ^= 1;			// toggle pin so 
+    LATCbits.LATC1 ^= 1;			  // toggle pin so 
     TMR0 = seventeen_ms;
     
 } // end tmr0_isr
