@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------
-//- Name:	kevin Brenneman Michael Stumpf
+//- Name:	Kevin Brenneman Michael Stumpf
 //- Date:	Spring 2014
 //-
 //- Purp: 		figure out Bit bang for pwm for final project
@@ -55,8 +55,9 @@
 #define seventeen_ms 31536
 #define five_us    65525
 
+//what are we defining these as
 //define pwm channels 
-#define pwm1  
+#define pwm1  LATAbits.LATA0  
 #define pwm2
 #define pwm3 
 #define pwm4 
@@ -73,31 +74,21 @@ typedef unsigned long int32;
 void INIT_PIC (void);
 
 //---------------------------
-// globals
+// global variables
 //---------------------------
-int8 pwm_channel[4];
+int8 pwm_channel[4]; //unused global variable, Delete?
 int8 duty_cycle[4];
+int8 counter;
+char direction = 'f';    //global variable that is running the "state machine" to walk to robot
 
-/*
-//----------------------------------------------------
-// Set the vector for the low priority interrupt
-//----------------------------------------------------
-void high_isr(void);
-#pragma code high_vector=0x08
-void interrupt_at_high_vector(void) {
-	_asm GOTO high_isr _endasm
-}
-#pragma code 
-*/
-
+//headers for functions
+void direction_routine();
 //----------------------------------------------
 // Main "function"
 //----------------------------------------------
 void main (void) {
     
-    //local variables (both need to be in other function )
-    char direction = 'f';
-    int8 direction_state = 1;
+    //moved local variables to helper function
     
 	INIT_PIC();
     
@@ -153,54 +144,10 @@ void main (void) {
 			} // end switch
 			printf("> ");		// print a nice command prompt for the user
             
-            // state switch switch (kevin put dis in seperate function )
-            switch(direction){
-                
-            //--------------------------------------------
-			// forward state 
-			//--------------------------------------------
-                case 'f':
-                    
-                    if(direction_state = 0){
-                        duty_cycle[0] = 180;        // test angles 
-                        duty_cycle[1] = 45;
-                        duty_cycle[2] = 180;
-                        duty_cycle[3] = 45;
-                    }
-                    else{
-                        duty_cycle[0] = 45;        // test angles 
-                        duty_cycle[1] = 180;
-                        duty_cycle[2] = 45;
-                        duty_cycle[3] = 180;
-                    }
-                   
-            //--------------------------------------------
-			// right state 
-			//--------------------------------------------
-                case 'r':
-                    
-                    if(direction_state = 0){
-                        duty_cycle[0] = 180;        // test angles 
-                        duty_cycle[1] = 45;
-                        duty_cycle[2] = 180;
-                        duty_cycle[3] = 45;
-                    }
-                    else{
-                        duty_cycle[0] = 45;        // test angles 
-                        duty_cycle[1] = 180;
-                        duty_cycle[2] = 45;
-                        duty_cycle[3] = 180;
-                    }
-            //--------------------------------------------
-			// left state 
-			//--------------------------------------------
-                    //copy pasta 
-            //--------------------------------------------
-			// backward state 
-			//--------------------------------------------
-                // copy pasta 
-                
-            }
+            //function written on sunday goes here
+            direction_routine();
+            
+            
             
             
      } // end if 
@@ -270,6 +217,7 @@ void interrupt ISR(void) {
     INTCONbits.TMR0IF = 0;          // clear flag 
     LATCbits.LATC1 ^  = 1;			// toggle pin RC1
     
+    //going to attempt to attempt to rename these based of a #define
     //turn A0 - A3 on 
     LATAbits.LATA0 = 1;
     LATAbits.LATA1 = 1;
@@ -308,11 +256,12 @@ void interrupt ISR(void) {
         TMR1 = five_us;           
         while(PIR1bits.TMR1IF == 0);    
         PIR1bits.TMR1IF = 0;
-    }
+    }//end for loop
    
     LATCbits.LATC1 ^= 1;			  // toggle pin so 
     TMR0 = seventeen_ms;
-    // put counter here (global var)
+    //global variable to count how many times we have gone through isr
+    counter++;  //unsure of exactly where this will be used for now
 } // end tmr0_isr
 
 
@@ -325,4 +274,56 @@ void putch(char c) {
         continue;
     TX2REG = c;
 
+}
+
+//-----------------------------------------------------------------------------
+// Function to change the direction of the robot
+//-----------------------------------------------------------------------------
+void direction_routine() {
+    static int8 direction_state = 1;    //static variable to remember the state that we are in. 
+    switch (direction) {
+
+            //--------------------------------------------
+            // forward state 
+            //--------------------------------------------
+        case 'f':
+
+            if (direction_state = 0) {
+                duty_cycle[0] = 180; // test angles 
+                duty_cycle[1] = 45;
+                duty_cycle[2] = 180;
+                duty_cycle[3] = 45;
+            } else {
+                duty_cycle[0] = 45; // test angles 
+                duty_cycle[1] = 180;
+                duty_cycle[2] = 45;
+                duty_cycle[3] = 180;
+            }
+
+            //--------------------------------------------
+            // right state 
+            //--------------------------------------------
+        case 'r':
+
+            if (direction_state = 0) {
+                duty_cycle[0] = 180; // test angles 
+                duty_cycle[1] = 45;
+                duty_cycle[2] = 180;
+                duty_cycle[3] = 45;
+            } else {
+                duty_cycle[0] = 45; // test angles 
+                duty_cycle[1] = 180;
+                duty_cycle[2] = 45;
+                duty_cycle[3] = 180;
+            }
+            //--------------------------------------------
+            // left state 
+            //--------------------------------------------
+            //copy pasta 
+            //--------------------------------------------
+            // backward state 
+            //--------------------------------------------
+            // copy pasta 
+
+    }
 }
