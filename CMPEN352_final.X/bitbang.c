@@ -55,12 +55,12 @@
 #define seventeen_ms 31536
 #define five_us    65525
 
-//what are we defining these as
+//defining these as the actual pwm channels we are using
 //define pwm channels 
 #define pwm1  LATAbits.LATA0  
-#define pwm2
-#define pwm3 
-#define pwm4 
+#define pwm2  LATAbits.LATA1
+#define pwm3  LATAbits.LATA2
+#define pwm4  LATAbits.LATA3
 //---------------------------
 // type define 
 //---------------------------
@@ -219,7 +219,7 @@ void interrupt ISR(void) {
     
     //going to attempt to attempt to rename these based of a #define
     //turn A0 - A3 on 
-    LATAbits.LATA0 = 1;
+    pwm1 = 1;
     LATAbits.LATA1 = 1;
     LATAbits.LATA2 = 1;
     LATAbits.LATA3 = 1;
@@ -236,8 +236,8 @@ void interrupt ISR(void) {
         //adjust duty cycle of each pin 
         // duty RA0
         if (duty_cycle[0] < i)
-             LATAbits.LATA0 = 0;
-        else LATAbits.LATA0 = 1;
+             pwm1 = 0;
+        else pwm1 = 1;
         //duty  RA1
         if (duty_cycle[1] < i)
              LATAbits.LATA1 = 0;
@@ -262,6 +262,7 @@ void interrupt ISR(void) {
     TMR0 = seventeen_ms;
     //global variable to count how many times we have gone through isr
     counter++;  //unsure of exactly where this will be used for now
+    //would we want to our direction routine here to update all the values?
 } // end tmr0_isr
 
 
