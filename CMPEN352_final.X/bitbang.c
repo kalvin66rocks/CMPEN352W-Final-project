@@ -95,17 +95,12 @@ void interrupt_at_high_vector(void) {
 //----------------------------------------------
 void main (void) {
     
-    //local variables 
+    //local variables (both need to be in other function )
     char direction = 'f';
     int8 direction_state = 1;
     
 	INIT_PIC();
     
-    // set channels to respective pins
-    //pwm_channel[0] = PORTAbits.RA0;
-    //pwm_channel[1] = PORTAbits.RA1;
-    //pwm_channel[2] = PORTAbits.RA2;
-    //pwm_channel[3] = PORTAbits.RA3;
     
     // default angles 
     duty_cycle[0] = 45;
@@ -118,9 +113,9 @@ void main (void) {
     if (PIR3bits.RC2IF) {				    // wait for the receive flag to be set
 			PIR3bits.RC2IF = 0;				// clear the flag for the next read
             
+            // if some counter >= 50 switch state
             // control switch 
 			switch (RCREG2) {				// and do one of the following based on that key
-
 			//--------------------------------------------
 			// Reply with help menu
 			//--------------------------------------------
@@ -145,6 +140,9 @@ void main (void) {
                 printf("light should be on");
                 LATCbits.LATC1 ^= 1; 
                 break;
+                
+             // put case change direction 
+                // calls function with other switch (function not in code yet)
 			//--------------------------------------------
 			// If something unknown is hit, tell user
 			//--------------------------------------------
@@ -155,7 +153,7 @@ void main (void) {
 			} // end switch
 			printf("> ");		// print a nice command prompt for the user
             
-            // state switch switch 
+            // state switch switch (kevin put dis in seperate function )
             switch(direction){
                 
             //--------------------------------------------
@@ -196,11 +194,11 @@ void main (void) {
             //--------------------------------------------
 			// left state 
 			//--------------------------------------------
-                    
+                    //copy pasta 
             //--------------------------------------------
 			// backward state 
 			//--------------------------------------------
-                
+                // copy pasta 
                 
             }
             
@@ -314,7 +312,7 @@ void interrupt ISR(void) {
    
     LATCbits.LATC1 ^= 1;			  // toggle pin so 
     TMR0 = seventeen_ms;
-    
+    // put counter here (global var)
 } // end tmr0_isr
 
 
