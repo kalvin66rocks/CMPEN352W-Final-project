@@ -53,9 +53,9 @@
 #define one_half_ms  62536 
 #define two_ms       61536
 #define seventeen_ms 36000
-#define five_us      65525
+#define five_us      65533 //old value 65526 then 65532s
 
-//defining these as the actual pwm channels we are using
+//define these as the actual pwm channels we are using
 #define pwm1  LATAbits.LATA0  
 #define pwm2  LATAbits.LATA1
 #define pwm3  LATAbits.LATA2
@@ -186,6 +186,7 @@ void INIT_PIC(void) {
     TRISAbits.TRISA1 = 0; // RA1 is GPIO output
     TRISAbits.TRISA2 = 0; // RA2 is GPIO output
     TRISAbits.TRISA3 = 0; // RA3 is GPIO output 
+    ANSELAbits.ANSA0 = 1;
 
     //Timer 0 
     T0CON = 0; // Funky power-on defaults, see page 159
@@ -237,6 +238,7 @@ void direction_routine() {
                 duty_cycle[2] = 0;
                 duty_cycle[3] = 0;
             }
+            break;
 
             //--------------------------------------------
             // right state 
@@ -254,6 +256,7 @@ void direction_routine() {
                 duty_cycle[2] = 45;
                 duty_cycle[3] = 180;
             }
+            break;
 
             //--------------------------------------------
             // left state 
@@ -270,21 +273,23 @@ void direction_routine() {
                 duty_cycle[2] = 45;
                 duty_cycle[3] = 180;
             }
+            break;
             //--------------------------------------------
             // backward state 
             //--------------------------------------------
         case 'b':
             if (direction_change == 0) {
-                duty_cycle[0] = 180; // test angles 
-                duty_cycle[1] = 45;
-                duty_cycle[2] = 180;
-                duty_cycle[3] = 45;
+                duty_cycle[0] = 0; // test angles 
+                duty_cycle[1] = 0;
+                duty_cycle[2] = 0;
+                duty_cycle[3] = 0;
             } else {
-                duty_cycle[0] = 45; // test angles 
-                duty_cycle[1] = 180;
-                duty_cycle[2] = 45;
-                duty_cycle[3] = 180;
+                duty_cycle[0] = 0; // test angles 
+                duty_cycle[1] = 0;
+                duty_cycle[2] = 0;
+                duty_cycle[3] = 0;
             }
+            break;
 
     }
 }
@@ -318,19 +323,19 @@ void interrupt ISR(void) {
         // duty RA0
         if (duty_cycle[0] < i)
             pwm1 = 0;
-        else pwm1 = 1;
+        //else pwm1 = 1;
         //duty  RA1
         if (duty_cycle[1] < i)
-            LATAbits.LATA1 = 0;
-        else LATAbits.LATA1 = 1;
+            pwm2 = 0;
+        //else pwm2 = 1;
         //duty RA2
         if (duty_cycle[2] < i)
-            LATAbits.LATA2 = 0;
-        else LATAbits.LATA2 = 1;
+            pwm3 = 0;
+        //else pwm3 = 1;
         //duty RA3
         if (duty_cycle[3] < i)
-            LATAbits.LATA3 = 0;
-        else LATAbits.LATA3 = 1;
+            pwm4 = 0;
+        //else pwm4 = 1;
 
         // delay for 5us 
         PIR1bits.TMR1IF = 0; // clear incase 
@@ -338,13 +343,18 @@ void interrupt ISR(void) {
         while (PIR1bits.TMR1IF == 0);
         PIR1bits.TMR1IF = 0;
     }//end for loop
-
+    
+    pwm1 =0;
+    pwm2 =0;
+    pwm3 =0;
+    pwm4 =0;
+    
     LATCbits.LATC1 ^= 1; // toggle pin so 
     TMR0 = seventeen_ms;
 
     //global variable to count how many times we have gone through isr
     counter++;
-    if (counter >= 100) {
+    if (counter >= 25) {
 
         counter = 0;
         // toggle direction change call function leave
