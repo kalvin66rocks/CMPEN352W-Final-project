@@ -52,8 +52,8 @@
 #define one_ms       63536
 #define one_half_ms  62536 
 #define two_ms       61536
-#define seventeen_ms 31536
-#define five_us    65525
+#define seventeen_ms 36000
+#define five_us      65525
 
 //defining these as the actual pwm channels we are using
 #define pwm1  LATAbits.LATA0  
@@ -71,13 +71,14 @@ typedef unsigned long int32;
 // functions
 //---------------------------
 void INIT_PIC(void);
-
+void direction_routine();
 //---------------------------
 // global variables
 //---------------------------
 int8 pwm_channel[4]; //unused global variable, Delete?
 int8 duty_cycle[4];
-int8 counter;
+int8 counter = 0;
+int8 direction_change; 
 char direction = 'f'; //global variable that is running the "state machine" to walk to robot
 
 //headers for functions
@@ -139,9 +140,9 @@ void main(void) {
                     printf("which direction?\r\n");
                     while (PIR3bits.RC2IF == 0);
                     PIR3bits.RC2IF = 0;
-                    printf("direction is %s/r/n", RCREG2);
                     direction = RCREG2;
-
+                    printf("direction is %c/r/n", direction);
+                    break;
                     //--------------------------------------------
                     // If something unknown is hit, tell user
                     //--------------------------------------------
@@ -151,12 +152,6 @@ void main(void) {
 
             } // end switch
             printf("> "); // print a nice command prompt for the user
-
-            //function written on sunday goes here
-            direction_routine();
-
-
-
 
         } // end if 
     } //end while 
@@ -222,7 +217,7 @@ void INIT_PIC(void) {
 // Function to change the direction of the robot
 //-----------------------------------------------------------------------------
 
-void direction_routine(int8 direction_state) {
+void direction_routine() {
 
     switch (direction) {
 
@@ -231,16 +226,16 @@ void direction_routine(int8 direction_state) {
             //--------------------------------------------
         case 'f':
 
-            if (direction_state = 0) {
+            if (direction_change == 0) {
                 duty_cycle[0] = 180; // test angles 
-                duty_cycle[1] = 45;
-                duty_cycle[2] = 180;
-                duty_cycle[3] = 45;
-            } else {
-                duty_cycle[0] = 45; // test angles 
                 duty_cycle[1] = 180;
-                duty_cycle[2] = 45;
+                duty_cycle[2] = 180;
                 duty_cycle[3] = 180;
+            } else {
+                duty_cycle[0] = 0; // test angles 
+                duty_cycle[1] = 0;
+                duty_cycle[2] = 0;
+                duty_cycle[3] = 0;
             }
 
             //--------------------------------------------
@@ -248,7 +243,7 @@ void direction_routine(int8 direction_state) {
             //--------------------------------------------
         case 'r':
 
-            if (direction_state = 0) {
+            if (direction_change == 0) {
                 duty_cycle[0] = 180; // test angles 
                 duty_cycle[1] = 45;
                 duty_cycle[2] = 180;
@@ -264,7 +259,7 @@ void direction_routine(int8 direction_state) {
             // left state 
             //--------------------------------------------
         case 'l':
-            if (direction_state = 0) {
+            if (direction_change == 0) {
                 duty_cycle[0] = 180; // test angles 
                 duty_cycle[1] = 45;
                 duty_cycle[2] = 180;
@@ -279,7 +274,7 @@ void direction_routine(int8 direction_state) {
             // backward state 
             //--------------------------------------------
         case 'b':
-            if (direction_state = 0) {
+            if (direction_change == 0) {
                 duty_cycle[0] = 180; // test angles 
                 duty_cycle[1] = 45;
                 duty_cycle[2] = 180;
@@ -300,7 +295,6 @@ void direction_routine(int8 direction_state) {
 
 void interrupt ISR(void) {
 
-    static int8 direction_change = 0;
     INTCONbits.TMR0IF = 0; // clear flag 
     LATCbits.LATC1 ^ = 1; // toggle pin RC1
 
@@ -350,12 +344,13 @@ void interrupt ISR(void) {
 
     //global variable to count how many times we have gone through isr
     counter++;
-    if (counter >= 50) {
+    if (counter >= 100) {
 
         counter = 0;
         // toggle direction change call function leave
-        direction_change ^= 1;
-        direction_routine(direction_change);
+        if(direction_change == 1){direction_change = 0;}
+        else {direction_change = 1;}
+        direction_routine();
     }
 } // end tmr0_isr
 
