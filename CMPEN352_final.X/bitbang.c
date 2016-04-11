@@ -52,7 +52,7 @@
 #define one_ms       63536
 #define one_half_ms  62536 
 #define two_ms       61536
-#define seventeen_ms 36000
+#define eighteen_ms 36000
 #define five_us      65533 //old value 65526 then 65532s
 
 //define these as the actual pwm channels we are using
@@ -78,7 +78,8 @@ void direction_routine();
 int8 pwm_channel[4]; //unused global variable, Delete?
 int8 duty_cycle[4];
 int8 counter = 0;
-int8 direction_change; 
+int8 direction_change;
+int8 count_value = 100;
 char direction = 'f'; //global variable that is running the "state machine" to walk to robot
 
 //headers for functions
@@ -133,6 +134,33 @@ void main(void) {
                     LATCbits.LATC1 ^= 1;
                     break;
                     
+                    
+                    //--------------------------------------------
+                    // decrease the speed 
+                    //--------------------------------------------
+                case's':
+                    if (counter > 25) {
+                        printf("Speed decreased by 25\r\n");
+                        count_value -= 25;
+                    }
+                    else{
+                        printf("Lowest speed already reached\r\n");
+                    }
+                    break;
+                    
+                    //--------------------------------------------
+                    // increase the speed 
+                    //--------------------------------------------
+                case'S':
+                    if (counter < 250) {
+                        printf("Speed increased by 25\r\n");
+                        count_value += 25;
+                    }
+                    else{
+                        printf("Highest speed already reached\r\n");
+                    }
+                    break;
+
                     //--------------------------------------------
                     // change the direction of your robot
                     //--------------------------------------------
@@ -141,7 +169,7 @@ void main(void) {
                     while (PIR3bits.RC2IF == 0);
                     PIR3bits.RC2IF = 0;
                     direction = RCREG2;
-                    printf("direction is %c/r/n", direction);
+                    printf("direction is %c\r\n", direction);
                     break;
                     //--------------------------------------------
                     // If something unknown is hit, tell user
@@ -187,8 +215,11 @@ void INIT_PIC(void) {
     TRISAbits.TRISA2 = 0; // RA2 is GPIO output
     TRISAbits.TRISA3 = 0; // RA3 is GPIO output 
     ANSELAbits.ANSA0 = 1;
+    ANSELAbits.ANSA1 = 1;
+    ANSELAbits.ANSA2 = 1;
+    ANSELAbits.ANSA3 = 1;
 
-    //Timer 0 
+    //Timer 0 Configuration
     T0CON = 0; // Funky power-on defaults, see page 159
     TMR0L = 0;
     T0CONbits.PSA = 0; // Assign pre scalar to TMR0
@@ -197,18 +228,18 @@ void INIT_PIC(void) {
     T0CONbits.T0PS0 = 0; // 011 = 1:16		111 = 1:256
     T0CONbits.T08BIT = 0; // 8-bit mode is legacy for older devices
     T0CONbits.TMR0ON = 1; // best to configure devices then turn them on
-    TMR0 = seventeen_ms; // set initial count value
-    //Timer 1
+    TMR0 = eighteen_ms; // set initial count value
+    INTCONbits.TMR0IF = 0; // Clear interrupt flag
+    INTCONbits.TMR0IE = 1; // Enable TMR0 interrupt
+
+    //Timer 1 Configuration
     T1CONbits.TMR1ON = 0; //turn off timer 1
     T1CONbits.T1CKPS0 = 1; //set the pre scaler
     T1CONbits.T1CKPS1 = 1; //set the pre scaler 11 = 8 bit ';
     PIE1bits.TMR1IE = 0; //ensure that interrupts are disabled
     T1CONbits.TMR1ON = 1; //turn on timer 1
 
-
-    INTCONbits.TMR0IF = 0; // Clear interrupt flag
-    INTCONbits.TMR0IE = 1; // Enable TMR0 interrupt
-
+    //Enable Global interrupts
     INTCONbits.GIE = 1; // Enable global interrupts
 
 
@@ -303,8 +334,7 @@ void interrupt ISR(void) {
     INTCONbits.TMR0IF = 0; // clear flag 
     LATCbits.LATC1 ^ = 1; // toggle pin RC1
 
-    //going to attempt to attempt to rename these based of a #define
-    //turn A0 - A3 on 
+    //Set all the PWM pins high 
     pwm1 = 1;
     pwm2 = 1;
     pwm3 = 1;
@@ -316,50 +346,49 @@ void interrupt ISR(void) {
     while (PIR1bits.TMR1IF == 0);
     PIR1bits.TMR1IF = 0;
 
-    //this entire for loop will take 1ms
+    //The for loop has a 1ms duration
     for (int i = 0; i < 180; i++) {
 
         //adjust duty cycle of each pin 
         // duty RA0
         if (duty_cycle[0] < i)
             pwm1 = 0;
-        //else pwm1 = 1;
         //duty  RA1
         if (duty_cycle[1] < i)
             pwm2 = 0;
-        //else pwm2 = 1;
         //duty RA2
         if (duty_cycle[2] < i)
             pwm3 = 0;
-        //else pwm3 = 1;
         //duty RA3
         if (duty_cycle[3] < i)
             pwm4 = 0;
-        //else pwm4 = 1;
 
         // delay for 5us 
-        PIR1bits.TMR1IF = 0; // clear incase 
-        TMR1 = five_us;
-        while (PIR1bits.TMR1IF == 0);
-        PIR1bits.TMR1IF = 0;
+        PIR1bits.TMR1IF = 0; // clear the flag for timer1
+        TMR1 = five_us; //set the initial counts on timer1
+        while (PIR1bits.TMR1IF == 0); //while the timer has not rolled over
+        PIR1bits.TMR1IF = 0; //clear the flag for timer 1
     }//end for loop
-    
-    pwm1 =0;
-    pwm2 =0;
-    pwm3 =0;
-    pwm4 =0;
-    
-    LATCbits.LATC1 ^= 1; // toggle pin so 
-    TMR0 = seventeen_ms;
+
+    //just in case set all PWM pins low
+    pwm1 = 0;
+    pwm2 = 0;
+    pwm3 = 0;
+    pwm4 = 0;
+
+    LATCbits.LATC1 ^= 1; // toggle pin RC1 
+    TMR0 = eighteen_ms; //give timer0 the correct initial counts so it is 18ms until next roll over
 
     //global variable to count how many times we have gone through isr
     counter++;
-    if (counter >= 25) {
-
+    if (counter >= count_value) {
         counter = 0;
         // toggle direction change call function leave
-        if(direction_change == 1){direction_change = 0;}
-        else {direction_change = 1;}
+        if (direction_change == 1) {
+            direction_change = 0;
+        } else {
+            direction_change = 1;
+        }
         direction_routine();
     }
 } // end tmr0_isr
