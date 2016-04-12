@@ -9044,7 +9044,7 @@ extern int printf(const char *, ...);
 #pragma config XINST = OFF
 #pragma config DEBUG = ON
 
-# 66
+# 70
 typedef unsigned char int8;
 typedef unsigned int int16;
 typedef unsigned long int32;
@@ -9061,6 +9061,7 @@ int8 pwm_channel[4];
 int8 duty_cycle[4];
 int8 counter = 0;
 int8 direction_change;
+int8 count_value = 100;
 char direction = 'f';
 
 
@@ -9115,6 +9116,30 @@ printf("light should be on");
 LATCbits.LATC1 ^= 1;
 break;
 
+# 145
+case's':
+if (counter > 25) {
+printf("Speed decreased by 25\r\n");
+count_value -= 25;
+}
+else{
+printf("Lowest speed already reached\r\n");
+}
+break;
+
+
+
+
+case'S':
+if (counter < 250) {
+printf("Speed increased by 25\r\n");
+count_value += 25;
+}
+else{
+printf("Highest speed already reached\r\n");
+}
+break;
+
 
 
 
@@ -9123,7 +9148,7 @@ printf("which direction?\r\n");
 while (PIR3bits.RC2IF == 0);
 PIR3bits.RC2IF = 0;
 direction = RCREG2;
-printf("direction is %c/r/n", direction);
+printf("direction is %c\r\n", direction);
 break;
 
 
@@ -9139,7 +9164,7 @@ printf("> ");
 }
 }
 
-# 164
+# 196
 void INIT_PIC(void) {
 
 OSCCONbits.IRCF2 = 1;
@@ -9147,7 +9172,7 @@ OSCCONbits.IRCF1 = 1;
 OSCCONbits.IRCF0 = 1;
 OSCTUNEbits.PLLEN = 1;
 
-# 175
+# 207
 TXSTA2bits.TXEN = 1;
 TXSTA2bits.SYNC = 0;
 TXSTA2bits.BRGH = 0;
@@ -9163,6 +9188,9 @@ TRISAbits.TRISA1 = 0;
 TRISAbits.TRISA2 = 0;
 TRISAbits.TRISA3 = 0;
 ANSELAbits.ANSA0 = 1;
+ANSELAbits.ANSA1 = 1;
+ANSELAbits.ANSA2 = 1;
+ANSELAbits.ANSA3 = 1;
 
 
 T0CON = 0;
@@ -9174,6 +9202,9 @@ T0CONbits.T0PS0 = 0;
 T0CONbits.T08BIT = 0;
 T0CONbits.TMR0ON = 1;
 TMR0 = 36000;
+INTCONbits.TMR0IF = 0;
+INTCONbits.TMR0IE = 1;
+
 
 T1CONbits.TMR1ON = 0;
 T1CONbits.T1CKPS0 = 1;
@@ -9182,15 +9213,12 @@ PIE1bits.TMR1IE = 0;
 T1CONbits.TMR1ON = 1;
 
 
-INTCONbits.TMR0IF = 0;
-INTCONbits.TMR0IE = 1;
-
 INTCONbits.GIE = 1;
 
 
 }
 
-# 221
+# 256
 void direction_routine() {
 
 switch (direction) {
@@ -9201,15 +9229,15 @@ switch (direction) {
 case 'f':
 
 if (direction_change == 0) {
-duty_cycle[0] = 180;
-duty_cycle[1] = 180;
+duty_cycle[0] = 100;
+duty_cycle[1] = 30;
 duty_cycle[2] = 180;
-duty_cycle[3] = 180;
+duty_cycle[3] = 20;
 } else {
-duty_cycle[0] = 0;
-duty_cycle[1] = 0;
-duty_cycle[2] = 0;
-duty_cycle[3] = 0;
+duty_cycle[0] = 30;
+duty_cycle[1] = 100;
+duty_cycle[2] = 20;
+duty_cycle[3] = 180;
 }
 break;
 
@@ -9220,13 +9248,13 @@ case 'r':
 
 if (direction_change == 0) {
 duty_cycle[0] = 180;
-duty_cycle[1] = 45;
-duty_cycle[2] = 180;
-duty_cycle[3] = 45;
-} else {
-duty_cycle[0] = 45;
 duty_cycle[1] = 180;
-duty_cycle[2] = 45;
+duty_cycle[2] = 180;
+duty_cycle[3] = 0;
+} else {
+duty_cycle[0] = 0;
+duty_cycle[1] = 0;
+duty_cycle[2] = 0;
 duty_cycle[3] = 180;
 }
 break;
@@ -9237,14 +9265,14 @@ break;
 case 'l':
 if (direction_change == 0) {
 duty_cycle[0] = 180;
-duty_cycle[1] = 45;
+duty_cycle[1] = 0;
 duty_cycle[2] = 180;
-duty_cycle[3] = 45;
+duty_cycle[3] = 0;
 } else {
-duty_cycle[0] = 45;
-duty_cycle[1] = 180;
-duty_cycle[2] = 45;
-duty_cycle[3] = 180;
+duty_cycle[0] = 180;
+duty_cycle[1] = 0;
+duty_cycle[2] = 180;
+duty_cycle[3] = 0;
 }
 break;
 
@@ -9252,14 +9280,14 @@ break;
 
 case 'b':
 if (direction_change == 0) {
-duty_cycle[0] = 0;
+duty_cycle[0] = 180;
 duty_cycle[1] = 0;
-duty_cycle[2] = 0;
+duty_cycle[2] = 180;
 duty_cycle[3] = 0;
 } else {
-duty_cycle[0] = 0;
+duty_cycle[0] = 180;
 duty_cycle[1] = 0;
-duty_cycle[2] = 0;
+duty_cycle[2] = 180;
 duty_cycle[3] = 0;
 }
 break;
@@ -9267,12 +9295,11 @@ break;
 }
 }
 
-# 301
+# 336
 void interrupt ISR(void) {
 
 INTCONbits.TMR0IF = 0;
 LATCbits.LATC1 ^ = 1;
-
 
 
 LATAbits.LATA0 = 1;
@@ -9294,18 +9321,14 @@ for (int i = 0; i < 180; i++) {
 if (duty_cycle[0] < i)
 LATAbits.LATA0 = 0;
 
-
 if (duty_cycle[1] < i)
 LATAbits.LATA1 = 0;
-
 
 if (duty_cycle[2] < i)
 LATAbits.LATA2 = 0;
 
-
 if (duty_cycle[3] < i)
 LATAbits.LATA3 = 0;
-
 
 
 PIR1bits.TMR1IF = 0;
@@ -9314,27 +9337,30 @@ while (PIR1bits.TMR1IF == 0);
 PIR1bits.TMR1IF = 0;
 }
 
-LATAbits.LATA0 =0;
-LATAbits.LATA1 =0;
-LATAbits.LATA2 =0;
-LATAbits.LATA3 =0;
+
+LATAbits.LATA0 = 0;
+LATAbits.LATA1 = 0;
+LATAbits.LATA2 = 0;
+LATAbits.LATA3 = 0;
 
 LATCbits.LATC1 ^= 1;
 TMR0 = 36000;
 
 
 counter++;
-if (counter >= 25) {
-
+if (counter >= count_value) {
 counter = 0;
 
-if(direction_change == 1){direction_change = 0;}
-else {direction_change = 1;}
+if (direction_change == 1) {
+direction_change = 0;
+} else {
+direction_change = 1;
+}
 direction_routine();
 }
 }
 
-# 372
+# 405
 void putch(char c) {
 
 while (!TX2IF)
