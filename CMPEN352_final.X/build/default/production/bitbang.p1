@@ -2,7 +2,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "77 bitbang.c
 [v _INIT_PIC `(v ~T0 @X0 0 ef ]
-"9571 D:\MPLABX\include\pic18f26k22.h
+"9571 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f26k22.h
 [s S557 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S557 . TMR1GIF TMR3GIF TMR5GIF CTMUIF TX2IF RC2IF BCL2IF SSP2IF ]
 "9581
@@ -16,9 +16,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S556 . . . . ]
 "9590
 [v _PIR3bits `VS556 ~T0 @X0 0 e@4004 ]
-"195 D:\MPLABX\include\stdio.h
+"195 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"7802 D:\MPLABX\include\pic18f26k22.h
+"7802 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f26k22.h
 [s S484 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S484 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
 "7812
@@ -305,7 +305,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26k22.h: 49: extern volatile unsigned char ANSELA @ 0xF38;
-"51 D:\MPLABX\include\pic18f26k22.h
+"51 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f26k22.h
 [; ;pic18f26k22.h: 51: asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
 [; ;pic18f26k22.h: 54: typedef union {
@@ -7543,9 +7543,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "86
 [v _count_value `uc ~T0 @X0 1 e ]
 [i _count_value
--> -> 100 `i `uc
+-> -> 50 `i `uc
 ]
-[; ;bitbang.c: 86: int8 count_value = 100;
+[; ;bitbang.c: 86: int8 count_value = 50;
 "87
 [v _direction `uc ~T0 @X0 1 e ]
 [i _direction
@@ -7904,9 +7904,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bitbang.c: 268: duty_cycle[2] = 180;
 "268
 [e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 269: duty_cycle[3] = 20;
+[; ;bitbang.c: 269: duty_cycle[3] = 65;
 "269
-[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 20 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 65 `i `uc ]
 "270
 }
 [; ;bitbang.c: 270: } else {
@@ -7919,9 +7919,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bitbang.c: 272: duty_cycle[1] = 100;
 "272
 [e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 100 `i `uc ]
-[; ;bitbang.c: 273: duty_cycle[2] = 20;
+[; ;bitbang.c: 273: duty_cycle[2] = 65;
 "273
-[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 20 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 65 `i `uc ]
 [; ;bitbang.c: 274: duty_cycle[3] = 180;
 "274
 [e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
@@ -7942,9 +7942,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bitbang.c: 284: duty_cycle[0] = 180;
 "284
 [e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 285: duty_cycle[1] = 180;
+[; ;bitbang.c: 285: duty_cycle[1] = 0;
 "285
-[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
 [; ;bitbang.c: 286: duty_cycle[2] = 180;
 "286
 [e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
@@ -7960,9 +7960,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bitbang.c: 289: duty_cycle[0] = 0;
 "289
 [e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
-[; ;bitbang.c: 290: duty_cycle[1] = 0;
+[; ;bitbang.c: 290: duty_cycle[1] = 180;
 "290
-[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
 [; ;bitbang.c: 291: duty_cycle[2] = 0;
 "291
 [e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
