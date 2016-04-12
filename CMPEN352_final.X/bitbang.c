@@ -56,10 +56,14 @@
 #define five_us      65533 //old value 65526 then 65532s
 
 //define these as the actual pwm channels we are using
-#define pwm1  LATAbits.LATA0  
-#define pwm2  LATAbits.LATA1
-#define pwm3  LATAbits.LATA2
-#define pwm4  LATAbits.LATA3
+#define pwm1   LATAbits.LATA0  
+#define pwm2   LATAbits.LATA1
+#define pwm3   LATAbits.LATA2
+#define pwm4   LATAbits.LATA3
+#define HIP0   duty_cycle[0]
+#define HIP1   duty_cycle[1]
+#define knee0  duty_cycle[2]
+#define knee1  duty_cycle[3]
 //---------------------------
 // type define 
 //---------------------------
@@ -259,15 +263,15 @@ void direction_routine() {
         case 'f':
 
             if (direction_change == 0) {
-                duty_cycle[0] = 180; // test angles 
-                duty_cycle[1] = 180;
-                duty_cycle[2] = 180;
-                duty_cycle[3] = 180;
+                HIP0  = 100; // test angles 
+                HIP1  = 30;
+                knee0 = 180;
+                knee1 = 20;
             } else {
-                duty_cycle[0] = 0; // test angles 
-                duty_cycle[1] = 0;
-                duty_cycle[2] = 0;
-                duty_cycle[3] = 0;
+                HIP0  = 30; // test angles 
+                HIP1  = 100;
+                knee0 = 20;
+                knee1 = 180;
             }
             break;
 
@@ -277,15 +281,15 @@ void direction_routine() {
         case 'r':
 
             if (direction_change == 0) {
-                duty_cycle[0] = 180; // test angles 
-                duty_cycle[1] = 45;
-                duty_cycle[2] = 180;
-                duty_cycle[3] = 45;
+                HIP0  = 180; // test angles 
+                HIP1  = 180;
+                knee0 = 180;
+                knee1 = 0;
             } else {
-                duty_cycle[0] = 45; // test angles 
-                duty_cycle[1] = 180;
-                duty_cycle[2] = 45;
-                duty_cycle[3] = 180;
+                HIP0  = 0; // test angles 
+                HIP1  = 0;
+                knee0 = 0;
+                knee1 = 180;
             }
             break;
 
@@ -294,15 +298,15 @@ void direction_routine() {
             //--------------------------------------------
         case 'l':
             if (direction_change == 0) {
-                duty_cycle[0] = 180; // test angles 
-                duty_cycle[1] = 45;
-                duty_cycle[2] = 180;
-                duty_cycle[3] = 45;
+                HIP0  = 180; // test angles 
+                HIP1  = 0;
+                knee0 = 180;
+                knee1 = 0;
             } else {
-                duty_cycle[0] = 45; // test angles 
-                duty_cycle[1] = 180;
-                duty_cycle[2] = 45;
-                duty_cycle[3] = 180;
+                HIP0  = 180; // test angles 
+                HIP1  = 0;
+                knee0 = 180;
+                knee1 = 0;
             }
             break;
             //--------------------------------------------
@@ -310,20 +314,20 @@ void direction_routine() {
             //--------------------------------------------
         case 'b':
             if (direction_change == 0) {
-                duty_cycle[0] = 0; // test angles 
-                duty_cycle[1] = 0;
-                duty_cycle[2] = 0;
-                duty_cycle[3] = 0;
+                HIP0  = 180; // test angles 
+                HIP1  = 0;
+                knee0 = 180;
+                knee1 = 0;
             } else {
-                duty_cycle[0] = 0; // test angles 
-                duty_cycle[1] = 0;
-                duty_cycle[2] = 0;
-                duty_cycle[3] = 0;
+                HIP0  = 180; // test angles 
+                HIP1  = 0;
+                knee0 = 180;
+                knee1 = 0;
             }
             break;
 
-    }
-}
+    } // end switch
+} // end function
 
 //-----------------------------------------------------------------------------
 //Bit banging
