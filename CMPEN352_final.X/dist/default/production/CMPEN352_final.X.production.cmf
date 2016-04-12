@@ -25,7 +25,7 @@ intcode CODE 0 8 8 160 1
 smallconst SMALLCONST 0 1000 1000 FC 1
 dataCOMRAM COMRAM 1 27 27 2 1
 bssCOMRAM COMRAM 1 1D 1D A 1
-$C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
+$C:\Users\Michael\AppData\Local\Temp\sb50.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 168 168 4 1
@@ -80,217 +80,217 @@ MEDIUMCONST 1406-FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\CMPEN352_final.X.production.obj
-8 intcode CODE >250:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-8 intcode CODE >336:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-42 intcode CODE >338:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-44 intcode CODE >339:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-46 intcode CODE >342:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-48 intcode CODE >343:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-4A intcode CODE >344:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-4C intcode CODE >345:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-4E intcode CODE >349:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-56 intcode CODE >350:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-5A intcode CODE >351:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-5C intcode CODE >354:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-74 intcode CODE >358:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-8C intcode CODE >359:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-8E intcode CODE >361:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-A6 intcode CODE >362:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-A8 intcode CODE >364:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-C0 intcode CODE >365:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-C2 intcode CODE >367:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-DA intcode CODE >368:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-DC intcode CODE >371:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-DE intcode CODE >372:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-E6 intcode CODE >373:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-EA intcode CODE >374:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-EC intcode CODE >354:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-FA intcode CODE >378:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-FC intcode CODE >379:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-FE intcode CODE >380:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-100 intcode CODE >381:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-102 intcode CODE >383:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-104 intcode CODE >384:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-10C intcode CODE >387:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-10E intcode CODE >388:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-116 intcode CODE >389:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11A intcode CODE >391:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-120 intcode CODE >392:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-124 intcode CODE >394:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-128 intcode CODE >396:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12C intcode CODE >398:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1228 text5 CODE >256:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1228 text5 CODE >258:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-122A text5 CODE >265:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1230 text5 CODE >266:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1234 text5 CODE >267:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1238 text5 CODE >268:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-123C text5 CODE >269:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1240 text5 CODE >270:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1242 text5 CODE >271:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1246 text5 CODE >272:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-124A text5 CODE >273:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-124E text5 CODE >274:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1252 text5 CODE >276:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1254 text5 CODE >283:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-125A text5 CODE >284:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-125E text5 CODE >285:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1262 text5 CODE >286:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1266 text5 CODE >287:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-126A text5 CODE >288:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-126C text5 CODE >289:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1270 text5 CODE >290:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1274 text5 CODE >291:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1278 text5 CODE >292:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-127C text5 CODE >294:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-127E text5 CODE >300:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1284 text5 CODE >301:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1288 text5 CODE >302:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-128C text5 CODE >303:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1290 text5 CODE >304:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1294 text5 CODE >305:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1296 text5 CODE >306:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-129A text5 CODE >307:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-129E text5 CODE >308:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12A2 text5 CODE >309:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12A6 text5 CODE >311:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12A8 text5 CODE >316:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12AE text5 CODE >317:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12B2 text5 CODE >318:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12B6 text5 CODE >319:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12BA text5 CODE >320:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12BE text5 CODE >321:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12C0 text5 CODE >322:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12C4 text5 CODE >323:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12C8 text5 CODE >324:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12CC text5 CODE >325:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12D0 text5 CODE >329:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12D2 text5 CODE >258:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1366 text3 CODE >196:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1366 text3 CODE >198:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1368 text3 CODE >199:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-136A text3 CODE >200:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-136C text3 CODE >201:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-136E text3 CODE >207:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1370 text3 CODE >208:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1372 text3 CODE >209:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1374 text3 CODE >210:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1376 text3 CODE >211:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1378 text3 CODE >212:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-137C text3 CODE >213:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-137E text3 CODE >216:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1380 text3 CODE >217:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1382 text3 CODE >218:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1384 text3 CODE >219:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1386 text3 CODE >220:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1388 text3 CODE >221:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-138C text3 CODE >222:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1390 text3 CODE >223:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1394 text3 CODE >224:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1398 text3 CODE >227:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-139C text3 CODE >228:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13A0 text3 CODE >229:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13A2 text3 CODE >230:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13A4 text3 CODE >231:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13A6 text3 CODE >232:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13A8 text3 CODE >233:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13AA text3 CODE >234:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13AC text3 CODE >235:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13B4 text3 CODE >236:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13B6 text3 CODE >237:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13B8 text3 CODE >240:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13BA text3 CODE >241:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13BC text3 CODE >242:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13BE text3 CODE >243:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13C0 text3 CODE >244:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13C2 text3 CODE >247:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13C4 text3 CODE >250:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13F8 text2 CODE >405:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13FA text2 CODE >407:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13FA text2 CODE >408:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13FE text2 CODE >409:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1402 text2 CODE >411:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-12EE text1 CODE >464:D:\MPLABX\sources\common\doprnt.c
-12EE text1 CODE >533:D:\MPLABX\sources\common\doprnt.c
-12F6 text1 CODE >536:D:\MPLABX\sources\common\doprnt.c
-12F8 text1 CODE >538:D:\MPLABX\sources\common\doprnt.c
-1300 text1 CODE >541:D:\MPLABX\sources\common\doprnt.c
-1306 text1 CODE >542:D:\MPLABX\sources\common\doprnt.c
-1308 text1 CODE >548:D:\MPLABX\sources\common\doprnt.c
-130C text1 CODE >635:D:\MPLABX\sources\common\doprnt.c
-130E text1 CODE >799:D:\MPLABX\sources\common\doprnt.c
-1322 text1 CODE >809:D:\MPLABX\sources\common\doprnt.c
-1328 text1 CODE >822:D:\MPLABX\sources\common\doprnt.c
-132A text1 CODE >635:D:\MPLABX\sources\common\doprnt.c
-134C text1 CODE >536:D:\MPLABX\sources\common\doprnt.c
-10FC text0 CODE >95:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-10FC text0 CODE >99:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1100 text0 CODE >103:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1104 text0 CODE >104:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1108 text0 CODE >105:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-110C text0 CODE >106:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1110 text0 CODE >110:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1114 text0 CODE >111:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1116 text0 CODE >115:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1118 text0 CODE >120:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1124 text0 CODE >121:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1130 text0 CODE >122:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-113C text0 CODE >123:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1148 text0 CODE >124:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-114A text0 CODE >130:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1156 text0 CODE >131:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1158 text0 CODE >137:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1164 text0 CODE >138:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1166 text0 CODE >139:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1168 text0 CODE >146:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-116E text0 CODE >147:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-117A text0 CODE >148:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-117E text0 CODE >149:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1180 text0 CODE >151:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-118C text0 CODE >153:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-118E text0 CODE >159:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1194 text0 CODE >160:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11A0 text0 CODE >161:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11A4 text0 CODE >162:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11A6 text0 CODE >164:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11B2 text0 CODE >166:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11B4 text0 CODE >172:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11C0 text0 CODE >173:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11C4 text0 CODE >174:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11C6 text0 CODE >175:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11CA text0 CODE >176:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11DC text0 CODE >177:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11DE text0 CODE >182:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11F0 text0 CODE >185:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-11F2 text0 CODE >115:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-121A text0 CODE >186:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-1226 text0 CODE >108:C:\Users\kalvi_000\Desktop\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
-13C6 cinit CODE >1037:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13C6 cinit CODE >1039:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13C6 cinit CODE >1042:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13C6 cinit CODE >1078:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13CA cinit CODE >1079:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13CC cinit CODE >1080:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13CC cinit CODE >1081:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13CE cinit CODE >1082:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13D0 cinit CODE >1083:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13D2 cinit CODE >1088:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13D4 cinit CODE >1089:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13D6 cinit CODE >1090:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13D8 cinit CODE >1091:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13DA cinit CODE >1092:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13DC cinit CODE >1093:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13DE cinit CODE >1094:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13E0 cinit CODE >1095:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13E4 cinit CODE >1096:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13E6 cinit CODE >1097:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13EA cinit CODE >1103:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13EA cinit CODE >1105:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13EC cinit CODE >1106:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13EE cinit CODE >1108:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13F0 cinit CODE >1109:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13F2 cinit CODE >1110:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
-13F4 cinit CODE >1111:C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.
+8 intcode CODE >250:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+8 intcode CODE >336:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+42 intcode CODE >338:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+44 intcode CODE >339:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+46 intcode CODE >342:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+48 intcode CODE >343:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+4A intcode CODE >344:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+4C intcode CODE >345:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+4E intcode CODE >349:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+56 intcode CODE >350:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+5A intcode CODE >351:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+5C intcode CODE >354:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+74 intcode CODE >358:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+8C intcode CODE >359:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+8E intcode CODE >361:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+A6 intcode CODE >362:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+A8 intcode CODE >364:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+C0 intcode CODE >365:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+C2 intcode CODE >367:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+DA intcode CODE >368:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+DC intcode CODE >371:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+DE intcode CODE >372:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+E6 intcode CODE >373:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+EA intcode CODE >374:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+EC intcode CODE >354:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+FA intcode CODE >378:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+FC intcode CODE >379:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+FE intcode CODE >380:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+100 intcode CODE >381:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+102 intcode CODE >383:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+104 intcode CODE >384:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+10C intcode CODE >387:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+10E intcode CODE >388:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+116 intcode CODE >389:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11A intcode CODE >391:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+120 intcode CODE >392:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+124 intcode CODE >394:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+128 intcode CODE >396:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12C intcode CODE >398:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1228 text5 CODE >256:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1228 text5 CODE >258:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+122A text5 CODE >265:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1230 text5 CODE >266:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1234 text5 CODE >267:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1238 text5 CODE >268:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+123C text5 CODE >269:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1240 text5 CODE >270:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1242 text5 CODE >271:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1246 text5 CODE >272:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+124A text5 CODE >273:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+124E text5 CODE >274:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1252 text5 CODE >276:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1254 text5 CODE >283:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+125A text5 CODE >284:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+125E text5 CODE >285:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1262 text5 CODE >286:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1266 text5 CODE >287:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+126A text5 CODE >288:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+126C text5 CODE >289:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1270 text5 CODE >290:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1274 text5 CODE >291:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1278 text5 CODE >292:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+127C text5 CODE >294:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+127E text5 CODE >300:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1284 text5 CODE >301:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1288 text5 CODE >302:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+128C text5 CODE >303:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1290 text5 CODE >304:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1294 text5 CODE >305:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1296 text5 CODE >306:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+129A text5 CODE >307:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+129E text5 CODE >308:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12A2 text5 CODE >309:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12A6 text5 CODE >311:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12A8 text5 CODE >316:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12AE text5 CODE >317:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12B2 text5 CODE >318:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12B6 text5 CODE >319:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12BA text5 CODE >320:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12BE text5 CODE >321:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12C0 text5 CODE >322:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12C4 text5 CODE >323:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12C8 text5 CODE >324:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12CC text5 CODE >325:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12D0 text5 CODE >329:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12D2 text5 CODE >258:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1366 text3 CODE >196:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1366 text3 CODE >198:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1368 text3 CODE >199:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+136A text3 CODE >200:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+136C text3 CODE >201:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+136E text3 CODE >207:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1370 text3 CODE >208:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1372 text3 CODE >209:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1374 text3 CODE >210:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1376 text3 CODE >211:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1378 text3 CODE >212:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+137C text3 CODE >213:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+137E text3 CODE >216:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1380 text3 CODE >217:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1382 text3 CODE >218:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1384 text3 CODE >219:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1386 text3 CODE >220:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1388 text3 CODE >221:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+138C text3 CODE >222:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1390 text3 CODE >223:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1394 text3 CODE >224:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1398 text3 CODE >227:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+139C text3 CODE >228:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13A0 text3 CODE >229:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13A2 text3 CODE >230:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13A4 text3 CODE >231:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13A6 text3 CODE >232:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13A8 text3 CODE >233:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13AA text3 CODE >234:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13AC text3 CODE >235:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13B4 text3 CODE >236:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13B6 text3 CODE >237:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13B8 text3 CODE >240:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13BA text3 CODE >241:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13BC text3 CODE >242:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13BE text3 CODE >243:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13C0 text3 CODE >244:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13C2 text3 CODE >247:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13C4 text3 CODE >250:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13F8 text2 CODE >405:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13FA text2 CODE >407:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13FA text2 CODE >408:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13FE text2 CODE >409:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1402 text2 CODE >411:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+12EE text1 CODE >464:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+12EE text1 CODE >533:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+12F6 text1 CODE >536:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+12F8 text1 CODE >538:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+1300 text1 CODE >541:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+1306 text1 CODE >542:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+1308 text1 CODE >548:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+130C text1 CODE >635:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+130E text1 CODE >799:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+1322 text1 CODE >809:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+1328 text1 CODE >822:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+132A text1 CODE >635:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+134C text1 CODE >536:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+10FC text0 CODE >95:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+10FC text0 CODE >99:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1100 text0 CODE >103:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1104 text0 CODE >104:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1108 text0 CODE >105:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+110C text0 CODE >106:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1110 text0 CODE >110:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1114 text0 CODE >111:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1116 text0 CODE >115:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1118 text0 CODE >120:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1124 text0 CODE >121:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1130 text0 CODE >122:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+113C text0 CODE >123:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1148 text0 CODE >124:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+114A text0 CODE >130:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1156 text0 CODE >131:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1158 text0 CODE >137:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1164 text0 CODE >138:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1166 text0 CODE >139:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1168 text0 CODE >146:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+116E text0 CODE >147:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+117A text0 CODE >148:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+117E text0 CODE >149:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1180 text0 CODE >151:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+118C text0 CODE >153:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+118E text0 CODE >159:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1194 text0 CODE >160:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11A0 text0 CODE >161:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11A4 text0 CODE >162:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11A6 text0 CODE >164:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11B2 text0 CODE >166:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11B4 text0 CODE >172:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11C0 text0 CODE >173:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11C4 text0 CODE >174:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11C6 text0 CODE >175:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11CA text0 CODE >176:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11DC text0 CODE >177:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11DE text0 CODE >182:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11F0 text0 CODE >185:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+11F2 text0 CODE >115:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+121A text0 CODE >186:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+1226 text0 CODE >108:C:\Users\Michael\Documents\GitHub\CMPEN352W-Final-project\CMPEN352_final.X\bitbang.c
+13C6 cinit CODE >1037:C:\Users\Michael\AppData\Local\Temp\sb50.
+13C6 cinit CODE >1039:C:\Users\Michael\AppData\Local\Temp\sb50.
+13C6 cinit CODE >1042:C:\Users\Michael\AppData\Local\Temp\sb50.
+13C6 cinit CODE >1078:C:\Users\Michael\AppData\Local\Temp\sb50.
+13CA cinit CODE >1079:C:\Users\Michael\AppData\Local\Temp\sb50.
+13CC cinit CODE >1080:C:\Users\Michael\AppData\Local\Temp\sb50.
+13CC cinit CODE >1081:C:\Users\Michael\AppData\Local\Temp\sb50.
+13CE cinit CODE >1082:C:\Users\Michael\AppData\Local\Temp\sb50.
+13D0 cinit CODE >1083:C:\Users\Michael\AppData\Local\Temp\sb50.
+13D2 cinit CODE >1088:C:\Users\Michael\AppData\Local\Temp\sb50.
+13D4 cinit CODE >1089:C:\Users\Michael\AppData\Local\Temp\sb50.
+13D6 cinit CODE >1090:C:\Users\Michael\AppData\Local\Temp\sb50.
+13D8 cinit CODE >1091:C:\Users\Michael\AppData\Local\Temp\sb50.
+13DA cinit CODE >1092:C:\Users\Michael\AppData\Local\Temp\sb50.
+13DC cinit CODE >1093:C:\Users\Michael\AppData\Local\Temp\sb50.
+13DE cinit CODE >1094:C:\Users\Michael\AppData\Local\Temp\sb50.
+13E0 cinit CODE >1095:C:\Users\Michael\AppData\Local\Temp\sb50.
+13E4 cinit CODE >1096:C:\Users\Michael\AppData\Local\Temp\sb50.
+13E6 cinit CODE >1097:C:\Users\Michael\AppData\Local\Temp\sb50.
+13EA cinit CODE >1103:C:\Users\Michael\AppData\Local\Temp\sb50.
+13EA cinit CODE >1105:C:\Users\Michael\AppData\Local\Temp\sb50.
+13EC cinit CODE >1106:C:\Users\Michael\AppData\Local\Temp\sb50.
+13EE cinit CODE >1108:C:\Users\Michael\AppData\Local\Temp\sb50.
+13F0 cinit CODE >1109:C:\Users\Michael\AppData\Local\Temp\sb50.
+13F2 cinit CODE >1110:C:\Users\Michael\AppData\Local\Temp\sb50.
+13F4 cinit CODE >1111:C:\Users\Michael\AppData\Local\Temp\sb50.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -309,17 +309,17 @@ __Hspace_1 2A 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\CMPEN352_final.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Michael\AppData\Local\Temp\sb50.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\CMPEN352_final.X.production.obj
 _T1CONbits FCD 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 ISR@i 12 0 COMRAM 1 cstackCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production\CMPEN352_final.X.production.obj
 _TMR0 FD6 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 _TMR1 FCE 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
+___sp 0 0 STACK 2 stack C:\Users\Michael\AppData\Local\Temp\sb50.obj
 _main 10FC 0 CODE 0 text0 dist/default/production\CMPEN352_final.X.production.obj
 btemp 29 0 COMRAM 1 temp dist/default/production\CMPEN352_final.X.production.obj
-start 168 0 CODE 0 init C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
+start 168 0 CODE 0 init C:\Users\Michael\AppData\Local\Temp\sb50.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
@@ -331,11 +331,11 @@ printf@f 15 0 COMRAM 1 cstackCOMRAM dist/default/production\CMPEN352_final.X.pro
 _T0CONbits FD5 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __CFG_CCP3MX$PORTB5 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\CMPEN352_final.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
-intlevel0 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
-intlevel1 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
-intlevel2 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
-intlevel3 0 0 CODE 0 text C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
+__accesstop 60 0 ABS 0 - C:\Users\Michael\AppData\Local\Temp\sb50.obj
+intlevel0 0 0 CODE 0 text C:\Users\Michael\AppData\Local\Temp\sb50.obj
+intlevel1 0 0 CODE 0 text C:\Users\Michael\AppData\Local\Temp\sb50.obj
+intlevel2 0 0 CODE 0 text C:\Users\Michael\AppData\Local\Temp\sb50.obj
+intlevel3 0 0 CODE 0 text C:\Users\Michael\AppData\Local\Temp\sb50.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __size_of_direction_routine 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 _OSCCONbits FD3 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
@@ -346,8 +346,8 @@ __Hclrtext 0 0 ABS 0 clrtext dist/default/production\CMPEN352_final.X.production
 __pidataCOMRAM 1404 0 CODE 0 idataCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 printf@flag 19 0 COMRAM 1 cstackCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Michael\AppData\Local\Temp\sb50.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Michael\AppData\Local\Temp\sb50.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\CMPEN352_final.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\CMPEN352_final.X.production.obj
@@ -405,7 +405,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production\CMPEN352_final.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\CMPEN352_final.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\CMPEN352_final.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\CMPEN352_final.X.production.obj
-__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\Michael\AppData\Local\Temp\sb50.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\CMPEN352_final.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\CMPEN352_final.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\CMPEN352_final.X.production.obj
@@ -489,8 +489,8 @@ _LATCbits F8B 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 _RCSTA2bits F71 0 ABS 0 - dist/default/production\CMPEN352_final.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\CMPEN352_final.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\CMPEN352_final.X.production.obj
-stackhi F37 0 ABS 0 - C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
-stacklo 60 0 ABS 0 - C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
+stackhi F37 0 ABS 0 - C:\Users\Michael\AppData\Local\Temp\sb50.obj
+stacklo 60 0 ABS 0 - C:\Users\Michael\AppData\Local\Temp\sb50.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\CMPEN352_final.X.production.obj
 _INIT_PIC 1366 0 CODE 0 text3 dist/default/production\CMPEN352_final.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\CMPEN352_final.X.production.obj
@@ -521,7 +521,7 @@ __ptext2 13F8 0 CODE 0 text2 dist/default/production\CMPEN352_final.X.production
 __ptext3 1366 0 CODE 0 text3 dist/default/production\CMPEN352_final.X.production.obj
 __ptext5 1228 0 CODE 0 text5 dist/default/production\CMPEN352_final.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\CMPEN352_final.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop C:\Users\KALVI_~1\AppData\Local\Temp\sb9c.obj
+__ramtop 1000 0 RAM 0 ramtop C:\Users\Michael\AppData\Local\Temp\sb50.obj
 putch@c 14 0 COMRAM 1 cstackCOMRAM dist/default/production\CMPEN352_final.X.production.obj
 __Lpowerup 168 0 CODE 0 powerup dist/default/production\CMPEN352_final.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\CMPEN352_final.X.production.obj

@@ -83,7 +83,7 @@ int8 pwm_channel[4]; //unused global variable, Delete?
 int8 duty_cycle[4];
 int8 counter = 0;
 int8 direction_change;
-int8 count_value = 100;
+int8 count_value = 50;
 char direction = 'f'; //global variable that is running the "state machine" to walk to robot
 
 //headers for functions
@@ -266,11 +266,11 @@ void direction_routine() {
                 HIP0  = 100; // test angles 
                 HIP1  = 30;
                 knee0 = 180;
-                knee1 = 20;
+                knee1 = 65;
             } else {
                 HIP0  = 30; // test angles 
                 HIP1  = 100;
-                knee0 = 20;
+                knee0 = 65;
                 knee1 = 180;
             }
             break;
@@ -282,12 +282,12 @@ void direction_routine() {
 
             if (direction_change == 0) {
                 HIP0  = 180; // test angles 
-                HIP1  = 180;
+                HIP1  = 0;
                 knee0 = 180;
                 knee1 = 0;
             } else {
                 HIP0  = 0; // test angles 
-                HIP1  = 0;
+                HIP1  = 180;
                 knee0 = 0;
                 knee1 = 180;
             }
