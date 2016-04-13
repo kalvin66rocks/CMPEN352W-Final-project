@@ -1,0 +1,52 @@
+/*
+ * Bootstrap example was used heavily in order to create this css document 
+ * Created by Michael Stumpf on 12/20/2015
+ */
+
+/*
+ * Globals
+ */
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  color: #555;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  color: #333;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1500px;
+    vertical-align: middle;
+  }
+}
+
+.control-container{
+    max-width: 1000px;
+}
+
+.center-up{
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
+ * button things 
+ */ 
+.btn{
+    background-color: #990099;
+    border-color: #990089;
+}
