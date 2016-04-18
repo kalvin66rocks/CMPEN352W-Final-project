@@ -18,6 +18,49 @@
     <link href="dist/css/Robo.css" rel="stylesheet">
     <link href="dist/css/acm_small.css" rel="stylesheet" media = "min-width: 600px)">
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
+      
+    <script>
+
+        function runPY(x){
+	       var xmlhttp;
+	       if (window.XMLHttpRequest) {
+		      xmlhttp=new XMLHttpRequest();
+	       } else {
+		      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	       }
+           if(x=='f'){ 
+	           xmlhttp.open("GET","fwd.php",true);
+	           xmlhttp.send();
+               //window.location.href = "https://www.pornhub.com";
+           }
+           if(x=='r'){
+               xmlhttp.open("GET","right.php",true);
+	           xmlhttp.send();
+           } 
+           if(x=='l'){
+               xmlhttp.open("GET","left.php",true);
+	           xmlhttp.send();
+           } 
+           if(x=='b'){
+               xmlhttp.open("GET","back.php",true);
+	           xmlhttp.send();
+           }
+           if(x=='s'){
+               xmlhttp.open("GET","stop.php",true);
+	           xmlhttp.send();
+           }
+            if(x == undefined){
+               window.location.href = "https://www.eyebleach.com"; 
+            }
+        }
+        
+  </script>
+  </head>
+    
+    <!-- banner --> 
+    <div class="acm-header">
+        <p class="acm-title">Robo Control</p>
+    </div>
     
     <!-- mast head --> 
     <div class="container"></div>
@@ -32,7 +75,7 @@
       <div class="center row">
           <div class="col-xs-4 col-sm-4"></div>
           <div class="col-xs-4 col-sm-4">
-          <button type="button" class="btn btn-block btn-primary">Forward </button>
+          <button type="button" onclick="runPY('f')" class="btn btn-block btn-primary">Forward </button>
           </div>
           <div class="col-sm-4"></div>
       </div><!-- end forward row -->
@@ -43,14 +86,14 @@
     <!-- left/right/ row -->
         <div class="center row">
           <div class="col-xs-4 col-sm-4">
-          <button type="button" class="btn btn-block btn-primary">Left</button>
+          <button type="button" onclick="runPY('l')" class="btn btn-block btn-primary">Left</button>
           </div><!-- end left col -->
             
     <!-- space for left right buttons--> 
           <div class="col-xs-4 col-sm-4"></div>
             
           <div class="col-xs-4 col-sm-4">
-          <button type="button" class="btn btn-block btn-primary">Right</button> <!-- end right col -->
+          <button type="button" onclick="runPY('r')" class="btn btn-block btn-primary">Right</button> <!-- end right col -->
           </div>
         </div><!-- end left/right col -->
         
@@ -61,17 +104,18 @@
         <div class="center row">
           <div class="col-xs-4 col-sm-4"></div>
           <div class="col-xs-4 col-sm-4">
-          <button type="button" class="btn btn-block btn-primary">Backward </button>
+          <button type="button" onclick="runPY('b')" class="btn btn-block btn-primary">Backward </button>
           </div>
           <div class="col-xs-4 col-sm-4"></div>
       </div><!-- end backwards row -->
        <br>
        <br>
+        
       <!-- stop row -->
         <div class="center row">
           <div class="col-xs-4 col-sm-4"></div>
           <div class="col-xs-4 col-sm-4">
-          <button type="button" class="btn btn-block btn-primary">Stop </button>
+          <button type="button" onclick="runPY('s')" class="btn btn-block btn-primary">Stop </button>
           </div>
           <div class="col-xs-4 col-sm-4"></div>
       </div><!-- end backwards row -->
