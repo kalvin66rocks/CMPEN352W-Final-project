@@ -240,6 +240,22 @@ void INIT_PIC(void) {
     OSCCONbits.IRCF0 = 1;
     OSCTUNEbits.PLLEN = 1;
 
+    
+    // ---------------Setup the serial port------------------
+	// Aiming for a baud rate of 9600
+	// BAUD = FOSC/[64*(SPBRGH+1)]
+	// SPBRGH = 64Mhz/ 9.6k/64 =  104
+	TRISCbits.TRISC7 = 1;
+	ANSELCbits.ANSC7 = 0;
+	TXSTA1bits.TXEN = 1;
+	TXSTA1bits.SYNC = 0;
+	TXSTA1bits.BRGH = 0;
+	BAUDCON1bits.BRG16 = 0;
+	RCSTA1bits.CREN = 1;
+	SPBRG1 = 104;
+	RCSTA1bits.SPEN = 1;
+    
+    /*
     // ---------------Setup the serial port------------------
     // Aiming for a baud rate of 9600
     // BAUD = FOSC/[64*(SPBRGH+1)]
@@ -251,7 +267,7 @@ void INIT_PIC(void) {
     RCSTA2bits.CREN = 1;
     SPBRG2 = 104;
     RCSTA2bits.SPEN = 1;
-
+*/
     //pin config 
     TRISCbits.TRISC1 = 0; // RC1 is GPIO output 
     TRISAbits.TRISA0 = 0; // RA0 is GPIO output
@@ -471,8 +487,8 @@ void putch(char c) {
 //-----------------------------------------------------------------------------
 void putch(char c) {
     
-    while( ! TX2IF)
+    while( ! TX1IF)
         continue;
-    TX2REG = c;
+    TX1REG = c;
 
 }
