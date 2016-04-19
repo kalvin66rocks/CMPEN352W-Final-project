@@ -2,10 +2,10 @@ Microchip MPLAB XC8 Compiler V1.35 ()
 
 Linker command line:
 
--W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
+-W-3 --edf=D:\MPLABX\dat\en_msgs.txt -cs \
   -h+dist/default/production\CMPEN352_final.X.production.sym \
   --cmf=dist/default/production\CMPEN352_final.X.production.cmf -z \
-  -Q18F26K22 -oC:\Users\Michael\AppData\Local\Temp\sb50.2 \
+  -Q18F26K22 -oC:\Users\KALVI_~1\AppData\Local\Temp\s7g4.2 \
   -Mdist/default/production/CMPEN352_final.X.production.map -E1 -ver=XC8 \
   -ASTACK=060h-0f37h -pstack=STACK -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh \
   -ASMALLCONST=01000h-010FFhx240 -AMEDIUMCONST=01000h-0FFFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Michael\AppData\Local\Temp\sb50.obj \
+  C:\Users\KALVI_~1\AppData\Local\Temp\s7g4.obj \
   dist/default/production\CMPEN352_final.X.production.obj 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Michael\AppData\Local\Temp\sb50.obj
+C:\Users\KALVI_~1\AppData\Local\Temp\s7g4.obj
                 end_init                            168      168        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -47,17 +47,17 @@ C:\Users\Michael\AppData\Local\Temp\sb50.obj
 dist/default/production\CMPEN352_final.X.production.obj
                 intcode                               8        8      160        4       0
                 temp                                 29       29        1        1       1
-                smallconst                         1000     1000       FC      800       0
-                text5                              1228     1228       C6      87E       0
-                text3                              1366     1366       60      87E       0
-                text2                              13F8     13F8        C      87E       0
-                text1                              12EE     12EE       78      87E       0
-                text0                              10FC     10FC      12C      87E       0
+                smallconst                         1000     1000       68      800       0
+                text5                              1164     1164       F6      834       0
+                text3                              12D2     12D2       60      834       0
+                text2                              1364     1364        C      834       0
+                text1                              125A     125A       78      834       0
+                text0                              1068     1068       FC      834       0
                 cstackCOMRAM                          1        1       1C        1       1
                 dataCOMRAM                           27       27        2        1       1
                 bssCOMRAM                            1D       1D        A        1       1
-                cinit                              13C6     13C6       32      87E       0
-                idataCOMRAM                        1404     1404        2      87E       0
+                cinit                              1332     1332       32      834       0
+                idataCOMRAM                        1370     1370        2      834       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -66,18 +66,18 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                            168      168        4         0
                 intcode                               8        8      160         0
                 reset_vec                             0        0        4         0
-                text5                              1228     1228       C6         0
-                text3                              1366     1366       60         0
-                text2                              13F8     13F8        C         0
-                text1                              12EE     12EE       78         0
-                text0                              10FC     10FC      12C         0
-                cinit                              13C6     13C6       32         0
-                idataCOMRAM                        1404     1404        2         0
+                text5                              1164     1164       F6         0
+                text3                              12D2     12D2       60         0
+                text2                              1364     1364        C         0
+                text1                              125A     125A       78         0
+                text0                              1068     1068       FC         0
+                cinit                              1332     1332       32         0
+                idataCOMRAM                        1370     1370        2         0
 
         CLASS   CONST          
 
         CLASS   SMALLCONST     
-                smallconst                         1000     1000       FC         0
+                smallconst                         1000     1000       68         0
 
         CLASS   MEDIUMCONST    
 
@@ -144,8 +144,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  000029  00002A         1       1  COMRAM  
                 intcode                        000008  000164  00016C         4       0  CODE    
-                smallconst                     001000  0000FC  0010FC       800       0  SMALLCON
-                text0                          0010FC  00030A  001406       87E       0  CODE    
+                smallconst                     001000  000068  001068       800       0  SMALLCON
+                text0                          001068  00030A  001372       834       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -172,16 +172,16 @@ UNUSED ADDRESS RANGES
         BIGRAM           00002A-000F37              F0E
         CODE             000004-000007                4
                          00016C-000FFF              E94
-                         001406-00FFFF             EBFA
+                         001372-00FFFF             EC8E
         COMRAM           00002A-00005F               36
         CONST            000004-000007                4
                          00016C-000FFF              E94
-                         001406-00FFFF             EBFA
+                         001372-00FFFF             EC8E
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001406-00FFFF             EBFA
+        MEDIUMCONST      001372-00FFFF             EC8E
         RAM              000060-000F37              100
         SFR              000F38-000FFF               28
-        SMALLCONST       001406-00FFFF              100
+        SMALLCONST       001372-00FFFF              100
         STACK            000060-000F37              ED8
 
                                   Symbol Table
@@ -190,7 +190,7 @@ UNUSED ADDRESS RANGES
 ISR@i                       cstackCOMRAM 000012
 _ANSELAbits                 (abs)        000F38
 _BAUDCON2bits               (abs)        000F70
-_INIT_PIC                   text3        001366
+_INIT_PIC                   text3        0012D2
 _INTCONbits                 (abs)        000FF2
 _ISR                        intcode      000008
 _LATAbits                   (abs)        000F89
@@ -199,8 +199,7 @@ _OSCCONbits                 (abs)        000FD3
 _OSCTUNEbits                (abs)        000F9B
 _PIE1bits                   (abs)        000F9D
 _PIR1bits                   (abs)        000F9E
-_PIR3bits                   (abs)        000FA4
-_RCREG2                     (abs)        000F74
+_RCREG1                     (abs)        000FAE
 _RCSTA2bits                 (abs)        000F71
 _SPBRG2                     (abs)        000F75
 _T0CON                      (abs)        000FD5
@@ -297,7 +296,7 @@ __Hrdata                    rdata        000000
 __Hreset_vec                reset_vec    000004
 __Hrparam                   rparam       000000
 __Hsfr                      sfr          000000
-__Hsmallconst               smallconst   0010FC
+__Hsmallconst               smallconst   001068
 __Hspace_0                  (abs)        30000E
 __Hspace_1                  (abs)        00002A
 __Hspace_2                  (abs)        000000
@@ -395,27 +394,27 @@ ___rparam_used              (abs)        000001
 ___sp                       stack        000000
 __accesstop                 (abs)        000060
 __activetblptr              (abs)        000002
-__end_of_INIT_PIC           text3        0013C6
+__end_of_INIT_PIC           text3        001332
 __end_of_ISR                intcode      000168
-__end_of__initialization    cinit        0013EA
-__end_of_direction_routine  text5        0012EE
-__end_of_main               text0        001228
-__end_of_printf             text1        001366
-__end_of_putch              text2        001404
-__initialization            cinit        0013C6
+__end_of__initialization    cinit        001356
+__end_of_direction_routine  text5        00125A
+__end_of_main               text0        001164
+__end_of_printf             text1        0012D2
+__end_of_putch              text2        001370
+__initialization            cinit        001332
 __mediumconst               mediumconst  000000
 __pbssCOMRAM                bssCOMRAM    00001D
-__pcinit                    cinit        0013C6
+__pcinit                    cinit        001332
 __pcstackCOMRAM             cstackCOMRAM 000001
 __pdataCOMRAM               dataCOMRAM   000027
-__pidataCOMRAM              idataCOMRAM  001404
+__pidataCOMRAM              idataCOMRAM  001370
 __pintcode                  intcode      000008
 __psmallconst               smallconst   001000
-__ptext0                    text0        0010FC
-__ptext1                    text1        0012EE
-__ptext2                    text2        0013F8
-__ptext3                    text3        001366
-__ptext5                    text5        001228
+__ptext0                    text0        001068
+__ptext1                    text1        00125A
+__ptext2                    text2        001364
+__ptext3                    text3        0012D2
+__ptext5                    text5        001164
 __ramtop                    ramtop       001000
 __size_of_INIT_PIC          (abs)        000000
 __size_of_ISR               (abs)        000000
@@ -428,14 +427,14 @@ _count_value                dataCOMRAM   000027
 _counter                    bssCOMRAM    000025
 _direction                  dataCOMRAM   000028
 _direction_change           bssCOMRAM    000026
-_direction_routine          text5        001228
+_direction_routine          text5        001164
 _duty_cycle                 bssCOMRAM    00001D
-_main                       text0        0010FC
-_printf                     text1        0012EE
-_putch                      text2        0013F8
+_main                       text0        001068
+_printf                     text1        00125A
+_putch                      text2        001364
 _pwm_channel                bssCOMRAM    000021
 btemp                       temp         000029
-end_of_initialization       cinit        0013EA
+end_of_initialization       cinit        001356
 int$flags                   temp         000029
 intlevel0                   text         000000
 intlevel1                   text         000000
@@ -449,7 +448,7 @@ putch@c                     cstackCOMRAM 000014
 stackhi                     (abs)        000F37
 stacklo                     (abs)        000060
 start                       init         000168
-start_initialization        cinit        0013C6
+start_initialization        cinit        001332
 
 
 FUNCTION INFORMATION:
@@ -486,13 +485,11 @@ Total ram usage:        0 bytes
 
  *************** function _printf *****************
  Defined at:
-		line 464 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c"
+		line 464 in file "D:\MPLABX\sources\common\doprnt.c"
  Parameters:    Size  Location     Type
   f               2   20[COMRAM] PTR const unsigned char 
-		 -> STR_14(3), STR_13(17), STR_12(18), STR_11(19), 
-		 -> STR_10(32), STR_9(24), STR_8(31), STR_7(24), 
-		 -> STR_6(19), STR_5(8), STR_4(7), STR_3(15), 
-		 -> STR_2(32), STR_1(3), 
+		 -> STR_8(3), STR_7(17), STR_6(19), STR_5(8), 
+		 -> STR_4(7), STR_3(15), STR_2(32), STR_1(3), 
  Auto vars:     Size  Location     Type
   tmpval          4    0        struct .
   cp              3    0        PTR const unsigned char 
@@ -528,7 +525,7 @@ Total ram usage:        8 bytes
 
  *************** function _putch *****************
  Defined at:
-		line 405 in file "bitbang.c"
+		line 472 in file "bitbang.c"
  Parameters:    Size  Location     Type
   c               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -558,7 +555,7 @@ Total ram usage:        1 bytes
 
  *************** function _INIT_PIC *****************
  Defined at:
-		line 196 in file "bitbang.c"
+		line 236 in file "bitbang.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -588,7 +585,7 @@ Total ram usage:        0 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 336 in file "bitbang.c"
+		line 392 in file "bitbang.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -618,7 +615,7 @@ Total ram usage:       19 bytes
 
  *************** function _direction_routine *****************
  Defined at:
-		line 256 in file "bitbang.c"
+		line 296 in file "bitbang.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -651,20 +648,20 @@ MODULE INFORMATION
 Module		Function		Class		Link	Load	Size
 bitbang.c
 		_ISR           		CODE           	0008	0000	353
-		_putch         		CODE           	13F8	0000	13
-		_main          		CODE           	10FC	0000	301
-		_direction_routine		CODE           	1228	0000	199
-		_INIT_PIC      		CODE           	1366	0000	97
+		_putch         		CODE           	1364	0000	13
+		_main          		CODE           	1068	0000	253
+		_direction_routine		CODE           	1164	0000	247
+		_INIT_PIC      		CODE           	12D2	0000	97
 
 bitbang.c estimated size: 963
 
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
-		_printf        		CODE           	12EE	0000	121
-
-C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c estimated size: 121
-
 shared
-		__initialization		CODE           	13C6	0000	37
+		__initialization		CODE           	1332	0000	37
 
 shared estimated size: 37
+
+D:\MPLABX\sources\common\doprnt.c
+		_printf        		CODE           	125A	0000	121
+
+D:\MPLABX\sources\common\doprnt.c estimated size: 121
 

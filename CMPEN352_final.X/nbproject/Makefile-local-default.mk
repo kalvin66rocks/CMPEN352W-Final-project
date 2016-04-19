@@ -15,23 +15,23 @@
 # $ makeMP_CC="/opt/microchip/mplabc30/v3.30c/bin/pic30-gcc" ...  
 #
 SHELL=cmd.exe
-PATH_TO_IDE_BIN=H:/mplab_ide/mplab_ide/modules/../../bin/
+PATH_TO_IDE_BIN=D:/MPLABX/mplab_ide/mplab_ide/modules/../../bin/
 # Adding MPLAB X bin directory to path.
-PATH:=H:/mplab_ide/mplab_ide/modules/../../bin/:$(PATH)
+PATH:=D:/MPLABX/mplab_ide/mplab_ide/modules/../../bin/:$(PATH)
 # Path to java used to run MPLAB X when this makefile was created
-MP_JAVA_PATH="H:\sys\java\jre1.8.0_65/bin/"
+MP_JAVA_PATH="D:\MPLABX\sys\java\jre1.8.0_65/bin/"
 OS_CURRENT="$(shell uname -s)"
-MP_CC="H:\bin\xc8.exe"
+MP_CC="D:\MPLABX\bin\xc8.exe"
 # MP_CPPC is not defined
 # MP_BC is not defined
-MP_AS="H:\bin\xc8.exe"
+MP_AS="D:\MPLABX\bin\xc8.exe"
 # MP_LD is not defined
 # MP_AR is not defined
-DEP_GEN=${MP_JAVA_PATH}java -jar "H:/mplab_ide/mplab_ide/modules/../../bin/extractobjectdependencies.jar"
-MP_CC_DIR="H:\bin"
+DEP_GEN=${MP_JAVA_PATH}java -jar "D:/MPLABX/mplab_ide/mplab_ide/modules/../../bin/extractobjectdependencies.jar"
+MP_CC_DIR="D:\MPLABX\bin"
 # MP_CPPC_DIR is not defined
 # MP_BC_DIR is not defined
-MP_AS_DIR="H:\bin"
+MP_AS_DIR="D:\MPLABX\bin"
 # MP_LD_DIR is not defined
 # MP_AR_DIR is not defined
 # MP_BC_DIR is not defined
