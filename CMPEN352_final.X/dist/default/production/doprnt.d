@@ -1,1 +1,1 @@
- dist/default/production/doprnt.d  dist/default/production/doprnt.p1:  D:/MPLABX/sources/common/doprnt.c
+ dist/default/production/doprnt.d  dist/default/production/doprnt.p1:  H:/sources/common/doprnt.c
