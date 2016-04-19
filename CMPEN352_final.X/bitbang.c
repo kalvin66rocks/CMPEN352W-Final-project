@@ -84,7 +84,7 @@ int8 duty_cycle[4];
 int8 counter = 0;
 int8 direction_change;
 int8 count_value = 50;
-char direction = 'f'; //global variable that is running the "state machine" to walk to robot
+char direction = 'h'; //global variable that is running the "state machine" to walk to robot
 
 //headers for functions
 void direction_routine();
@@ -107,12 +107,14 @@ void main(void) {
 
     while (1) {
         //put real logic here
-        if (PIR3bits.RC2IF) { // wait for the receive flag to be set
-            PIR3bits.RC2IF = 0; // clear the flag for the next read
+        //changed from pir3 and rc2, we are now reading the data from the pi
+        if (PIR1bits.RC1IF) { // wait for the receive flag to be set
+            PIR1bits.RC1IF = 0; // clear the flag for the next read
 
             // if some counter >= 50 switch state
             // control switch 
-            switch (RCREG2) { // and do one of the following based on that key
+            //changed from rcreg2
+            switch (RCREG1) { // and do one of the following based on that key
                     //--------------------------------------------
                     // Reply with help menu
                     //--------------------------------------------
@@ -138,17 +140,53 @@ void main(void) {
                     LATCbits.LATC1 ^= 1;
                     break;
                     
+
+                    //--------------------------------------------
+                    // forward
+                    //--------------------------------------------
+                case 'f':
+                    //printf("going forward\r\n");
+                    direction = 'f';
+                    break;
+                    //--------------------------------------------
+                    // right
+                    //--------------------------------------------
+                case 'r':
+                    //printf("going reverse\r\n");
+                    direction = 'r';
+                    break;
+                    //--------------------------------------------
+                    // left
+                    //--------------------------------------------
+                case 'l':
+                    //printf("going left\r\n");
+                    direction = 'l';
+                    break;
+                    //--------------------------------------------
+                    // back
+                    //--------------------------------------------
+                case 'b':
+                    //printf("going backward\r\n");
+                    direction = 'b';
+                    break;
+                    //--------------------------------------------
+                    // halt
+                    //--------------------------------------------
+                case 'h':
+                    //printf("going backward\r\n");
+                    direction = 'h';
+                    break;
                     
                     //--------------------------------------------
                     // decrease the speed 
                     //--------------------------------------------
                 case's':
                     if (counter > 25) {
-                        printf("Speed decreased by 25\r\n");
+                        //printf("Speed decreased by 25\r\n");
                         count_value -= 25;
                     }
                     else{
-                        printf("Lowest speed already reached\r\n");
+                        //printf("Lowest speed already reached\r\n");
                     }
                     break;
                     
@@ -157,14 +195,15 @@ void main(void) {
                     //--------------------------------------------
                 case'S':
                     if (counter < 250) {
-                        printf("Speed increased by 25\r\n");
+                       // printf("Speed increased by 25\r\n");
                         count_value += 25;
                     }
                     else{
-                        printf("Highest speed already reached\r\n");
+                       // printf("Highest speed already reached\r\n");
                     }
                     break;
 
+                    /*
                     //--------------------------------------------
                     // change the direction of your robot
                     //--------------------------------------------
@@ -178,8 +217,9 @@ void main(void) {
                     //--------------------------------------------
                     // If something unknown is hit, tell user
                     //--------------------------------------------
+                     * */
                 default:
-                    printf("Unknown key %c\r\n", RCREG2);
+                    printf("Unknown key %c\r\n", RCREG1);
                     break;
 
             } // end switch
@@ -325,6 +365,22 @@ void direction_routine() {
                 knee1 = 0;
             }
             break;
+            //--------------------------------------------
+            // stop state 
+            //--------------------------------------------
+        case 'h':
+            if (direction_change == 0) {
+                HIP0  = 90; // test angles 
+                HIP1  = 90;
+                knee0 = 90;
+                knee1 = 90;
+            } else {
+                HIP0  = 90; // test angles 
+                HIP1  = 90;
+                knee0 = 90;
+                knee1 = 90;
+            }
+            break;
 
     } // end switch
 } // end function
@@ -397,7 +453,7 @@ void interrupt ISR(void) {
     }
 } // end tmr0_isr
 
-
+/*
 //-----------------------------------------------------------------------------
 // Helper function needed to point PRINTF to the second USART
 //-----------------------------------------------------------------------------
@@ -409,4 +465,14 @@ void putch(char c) {
     TX2REG = c;
 
 }
+*/
+//-----------------------------------------------------------------------------
+// Helper function needed to point PRINTF to the first USART connected to RPi
+//-----------------------------------------------------------------------------
+void putch(char c) {
+    
+    while( ! TX2IF)
+        continue;
+    TX2REG = c;
 
+}
