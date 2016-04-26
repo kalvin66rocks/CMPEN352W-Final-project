@@ -20,6 +20,7 @@
 
 body {
   position: relative; /* For scrollspy */
+  background-image: url( "assests/img/cool.jpg")
 }
 
 /* Keep code small in tables on account of limited space */
@@ -126,6 +127,7 @@ h4 code {
  *
  * Turn the `.navbar` at the top of the docs purple.
  */
+
 
 .bs-docs-nav {
   margin-bottom: 0;

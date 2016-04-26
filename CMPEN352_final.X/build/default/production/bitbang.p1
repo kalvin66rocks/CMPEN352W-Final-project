@@ -2,7 +2,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "77 bitbang.c
 [v _INIT_PIC `(v ~T0 @X0 0 ef ]
-"9041 H:\include\pic18f26k22.h
+"9041 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f26k22.h
 [s S530 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S530 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
 "9050
@@ -13,9 +13,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S529 . . . ]
 "9057
 [v _PIR1bits `VS529 ~T0 @X0 0 e@3998 ]
-"195 H:\include\stdio.h
+"195 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"7802 H:\include\pic18f26k22.h
+"7802 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f26k22.h
 [s S484 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S484 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
 "7812
@@ -317,7 +317,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26k22.h: 49: extern volatile unsigned char ANSELA @ 0xF38;
-"51 H:\include\pic18f26k22.h
+"51 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f26k22.h
 [; ;pic18f26k22.h: 51: asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
 [; ;pic18f26k22.h: 54: typedef union {
@@ -7688,9 +7688,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bitbang.c: 183: case's':
 "183
 [e :U 1124 ]
-[; ;bitbang.c: 184: if (counter > 25) {
+[; ;bitbang.c: 184: if (count_value > 25) {
 "184
-[e $ ! > -> _counter `i -> 25 `i 1125  ]
+[e $ ! > -> _count_value `i -> 25 `i 1125  ]
 {
 [; ;bitbang.c: 186: count_value -= 25;
 "186
@@ -7713,9 +7713,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bitbang.c: 196: case'S':
 "196
 [e :U 1127 ]
-[; ;bitbang.c: 197: if (counter < 250) {
+[; ;bitbang.c: 197: if (count_value < 250) {
 "197
-[e $ ! < -> _counter `i -> 250 `i 1128  ]
+[e $ ! < -> _count_value `i -> 250 `i 1128  ]
 {
 [; ;bitbang.c: 199: count_value += 25;
 "199
@@ -7969,36 +7969,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 "339
 [e $ ! == -> _direction_change `i -> 0 `i 1139  ]
 {
-[; ;bitbang.c: 340: duty_cycle[0] = 180;
+[; ;bitbang.c: 340: duty_cycle[0] = 100;
 "340
-[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 341: duty_cycle[1] = 0;
+[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 100 `i `uc ]
+[; ;bitbang.c: 341: duty_cycle[1] = 100;
 "341
-[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
-[; ;bitbang.c: 342: duty_cycle[2] = 180;
+[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 100 `i `uc ]
+[; ;bitbang.c: 342: duty_cycle[2] = 65;
 "342
-[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 343: duty_cycle[3] = 0;
+[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 65 `i `uc ]
+[; ;bitbang.c: 343: duty_cycle[3] = 180;
 "343
-[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
 "344
 }
 [; ;bitbang.c: 344: } else {
 [e $U 1140  ]
 [e :U 1139 ]
 {
-[; ;bitbang.c: 345: duty_cycle[0] = 0;
+[; ;bitbang.c: 345: duty_cycle[0] = 30;
 "345
-[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
-[; ;bitbang.c: 346: duty_cycle[1] = 180;
+[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 30 `i `uc ]
+[; ;bitbang.c: 346: duty_cycle[1] = 30;
 "346
-[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 347: duty_cycle[2] = 0;
+[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 30 `i `uc ]
+[; ;bitbang.c: 347: duty_cycle[2] = 180;
 "347
-[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
-[; ;bitbang.c: 348: duty_cycle[3] = 180;
+[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
+[; ;bitbang.c: 348: duty_cycle[3] = 65;
 "348
-[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 65 `i `uc ]
 "349
 }
 [e :U 1140 ]
@@ -8013,36 +8013,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 "356
 [e $ ! == -> _direction_change `i -> 0 `i 1142  ]
 {
-[; ;bitbang.c: 357: duty_cycle[0] = 180;
+[; ;bitbang.c: 357: duty_cycle[0] = 30;
 "357
-[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 358: duty_cycle[1] = 0;
+[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 30 `i `uc ]
+[; ;bitbang.c: 358: duty_cycle[1] = 30;
 "358
-[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
-[; ;bitbang.c: 359: duty_cycle[2] = 180;
+[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 30 `i `uc ]
+[; ;bitbang.c: 359: duty_cycle[2] = 65;
 "359
-[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 360: duty_cycle[3] = 0;
+[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 65 `i `uc ]
+[; ;bitbang.c: 360: duty_cycle[3] = 180;
 "360
-[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
 "361
 }
 [; ;bitbang.c: 361: } else {
 [e $U 1143  ]
 [e :U 1142 ]
 {
-[; ;bitbang.c: 362: duty_cycle[0] = 180;
+[; ;bitbang.c: 362: duty_cycle[0] = 100;
 "362
-[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 363: duty_cycle[1] = 0;
+[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 100 `i `uc ]
+[; ;bitbang.c: 363: duty_cycle[1] = 100;
 "363
-[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 100 `i `uc ]
 [; ;bitbang.c: 364: duty_cycle[2] = 180;
 "364
 [e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 365: duty_cycle[3] = 0;
+[; ;bitbang.c: 365: duty_cycle[3] = 65;
 "365
-[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 65 `i `uc ]
 "366
 }
 [e :U 1143 ]
@@ -8057,36 +8057,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 "372
 [e $ ! == -> _direction_change `i -> 0 `i 1145  ]
 {
-[; ;bitbang.c: 373: duty_cycle[0] = 180;
+[; ;bitbang.c: 373: duty_cycle[0] = 30;
 "373
-[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 374: duty_cycle[1] = 0;
+[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 30 `i `uc ]
+[; ;bitbang.c: 374: duty_cycle[1] = 100;
 "374
-[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
-[; ;bitbang.c: 375: duty_cycle[2] = 180;
+[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 100 `i `uc ]
+[; ;bitbang.c: 375: duty_cycle[2] = 65;
 "375
-[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 376: duty_cycle[3] = 0;
+[e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 65 `i `uc ]
+[; ;bitbang.c: 376: duty_cycle[3] = 180;
 "376
-[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
 "377
 }
 [; ;bitbang.c: 377: } else {
 [e $U 1146  ]
 [e :U 1145 ]
 {
-[; ;bitbang.c: 378: duty_cycle[0] = 180;
+[; ;bitbang.c: 378: duty_cycle[0] = 100;
 "378
-[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 379: duty_cycle[1] = 0;
+[e = *U + &U _duty_cycle * -> -> -> 0 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 100 `i `uc ]
+[; ;bitbang.c: 379: duty_cycle[1] = 30;
 "379
-[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 1 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 30 `i `uc ]
 [; ;bitbang.c: 380: duty_cycle[2] = 180;
 "380
 [e = *U + &U _duty_cycle * -> -> -> 2 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 180 `i `uc ]
-[; ;bitbang.c: 381: duty_cycle[3] = 0;
+[; ;bitbang.c: 381: duty_cycle[3] = 65;
 "381
-[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _duty_cycle * -> -> -> 3 `i `ui `ux -> -> # *U &U _duty_cycle `ui `ux -> -> 65 `i `uc ]
 "382
 }
 [e :U 1146 ]
