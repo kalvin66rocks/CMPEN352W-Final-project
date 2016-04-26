@@ -45,8 +45,16 @@
                xmlhttp.open("GET","back.php",true);
 	           xmlhttp.send();
            }
-           if(x=='s'){
+           if(x=='h'){
                xmlhttp.open("GET","stop.php",true);
+	           xmlhttp.send();
+           }
+           if(x=='S'){
+               xmlhttp.open("GET","up.php",true);
+	           xmlhttp.send();
+           }
+           if(x=='s'){
+               xmlhttp.open("GET","down.php",true);
 	           xmlhttp.send();
            }
             if(x == undefined){
@@ -65,12 +73,13 @@
     <!-- mast head --> 
     <div class="container"></div>
       
-      
+     <body> 
     <br>
     <br>
     <br>
     <div class="center control-container container">
-        
+    
+    
     <!-- forward row-->
       <div class="center row">
           <div class="col-xs-4 col-sm-4"></div>
@@ -106,8 +115,12 @@
           <div class="col-xs-4 col-sm-4">
           <button type="button" onclick="runPY('b')" class="btn btn-block btn-primary">Backward </button>
           </div>
-          <div class="col-xs-4 col-sm-4"></div>
-      </div><!-- end backwards row -->
+              
+          <div class="col-xs-2 col-sm-2">
+          <button type="button" onclick="runPY('s')" class="btn btn-block btn-primary">Speed Up </button>
+          </div>
+          
+      </div><!-- end backwards/ speed Up row -->
        <br>
        <br>
         
@@ -115,10 +128,12 @@
         <div class="center row">
           <div class="col-xs-4 col-sm-4"></div>
           <div class="col-xs-4 col-sm-4">
-          <button type="button" onclick="runPY('s')" class="btn btn-block btn-primary">Stop </button>
+          <button type="button" onclick="runPY('h')" class="btn btn-block btn-primary">Stop </button>
           </div>
-          <div class="col-xs-4 col-sm-4"></div>
-      </div><!-- end backwards row -->
+          <div class="col-xs-2 col-sm-2">
+          <button type="button" onclick="runPY('S')" class="btn btn-block btn-primary">Slow Down </button>
+          </div>
+      </div><!-- end stop / slow down row -->
       </div><!-- end contianer -->
       
       

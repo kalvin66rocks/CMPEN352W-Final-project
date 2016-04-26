@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Mon Apr 18 22:17:24 2016
+                                                                                               Tue Apr 26 00:48:03 2016
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	18F26K22
@@ -467,9 +467,9 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    456  0010E8  D036               	goto	l1054
    457  0010EA                     l1040:
    458                           
-   459                           ;bitbang.c: 184: if (counter > 25) {
+   459                           ;bitbang.c: 184: if (count_value > 25) {
    460  0010EA  0E19               	movlw	25
-   461  0010EC  6425               	cpfsgt	_counter,c
+   461  0010EC  6427               	cpfsgt	_count_value,c
    462  0010EE  D033               	goto	l1054
    463                           
    464                           ;bitbang.c: 186: count_value -= 25;
@@ -485,9 +485,9 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    474  0010F4  D030               	goto	l1054
    475  0010F6                     l1044:
    476                           
-   477                           ;bitbang.c: 197: if (counter < 250) {
+   477                           ;bitbang.c: 197: if (count_value < 250) {
    478  0010F6  0EFA               	movlw	250
-   479  0010F8  6025               	cpfslt	_counter,c
+   479  0010F8  6027               	cpfslt	_count_value,c
    480  0010FA  D02D               	goto	l1054
    481                           
    482                           ;bitbang.c: 199: count_value += 25;
@@ -577,7 +577,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    566                           
    567 ;; *************** function _printf *****************
    568 ;; Defined at:
-   569 ;;		line 464 in file "H:\sources\common\doprnt.c"
+   569 ;;		line 464 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c"
    570 ;; Parameters:    Size  Location     Type
    571 ;;  f               2   20[COMRAM] PTR const unsigned char 
    572 ;;		 -> STR_8(3), STR_7(17), STR_6(19), STR_5(8), 
@@ -1407,40 +1407,40 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1371  001192  A4D8               	btfss	status,2,c
   1372  001194  D009               	goto	i2l856
   1373                           
-  1374                           ;bitbang.c: 340: duty_cycle[0] = 180;
-  1375  001196  0EB4               	movlw	180
+  1374                           ;bitbang.c: 340: duty_cycle[0] = 100;
+  1375  001196  0E64               	movlw	100
   1376  001198  6E1D               	movwf	_duty_cycle,c
   1377                           
-  1378                           ;bitbang.c: 341: duty_cycle[1] = 0;
-  1379  00119A  0E00               	movlw	0
+  1378                           ;bitbang.c: 341: duty_cycle[1] = 100;
+  1379  00119A  0E64               	movlw	100
   1380  00119C  6E1E               	movwf	_duty_cycle+1,c
   1381                           
-  1382                           ;bitbang.c: 342: duty_cycle[2] = 180;
-  1383  00119E  0EB4               	movlw	180
+  1382                           ;bitbang.c: 342: duty_cycle[2] = 65;
+  1383  00119E  0E41               	movlw	65
   1384  0011A0  6E1F               	movwf	_duty_cycle+2,c
   1385                           
-  1386                           ;bitbang.c: 343: duty_cycle[3] = 0;
-  1387  0011A2  0E00               	movlw	0
+  1386                           ;bitbang.c: 343: duty_cycle[3] = 180;
+  1387  0011A2  0EB4               	movlw	180
   1388  0011A4  6E20               	movwf	_duty_cycle+3,c
   1389                           
   1390                           ;bitbang.c: 344: } else {
   1391  0011A6  0012               	return	
   1392  0011A8                     i2l856:
   1393                           
-  1394                           ;bitbang.c: 345: duty_cycle[0] = 0;
-  1395  0011A8  0E00               	movlw	0
+  1394                           ;bitbang.c: 345: duty_cycle[0] = 30;
+  1395  0011A8  0E1E               	movlw	30
   1396  0011AA  6E1D               	movwf	_duty_cycle,c
   1397                           
-  1398                           ;bitbang.c: 346: duty_cycle[1] = 180;
-  1399  0011AC  0EB4               	movlw	180
+  1398                           ;bitbang.c: 346: duty_cycle[1] = 30;
+  1399  0011AC  0E1E               	movlw	30
   1400  0011AE  6E1E               	movwf	_duty_cycle+1,c
   1401                           
-  1402                           ;bitbang.c: 347: duty_cycle[2] = 0;
-  1403  0011B0  0E00               	movlw	0
+  1402                           ;bitbang.c: 347: duty_cycle[2] = 180;
+  1403  0011B0  0EB4               	movlw	180
   1404  0011B2  6E1F               	movwf	_duty_cycle+2,c
   1405                           
-  1406                           ;bitbang.c: 348: duty_cycle[3] = 180;
-  1407  0011B4  0EB4               	movlw	180
+  1406                           ;bitbang.c: 348: duty_cycle[3] = 65;
+  1407  0011B4  0E41               	movlw	65
   1408  0011B6  6E20               	movwf	_duty_cycle+3,c
   1409                           
   1410                           ;bitbang.c: 349: }
@@ -1453,40 +1453,40 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1417  0011BC  A4D8               	btfss	status,2,c
   1418  0011BE  D009               	goto	i2l862
   1419                           
-  1420                           ;bitbang.c: 357: duty_cycle[0] = 180;
-  1421  0011C0  0EB4               	movlw	180
+  1420                           ;bitbang.c: 357: duty_cycle[0] = 30;
+  1421  0011C0  0E1E               	movlw	30
   1422  0011C2  6E1D               	movwf	_duty_cycle,c
   1423                           
-  1424                           ;bitbang.c: 358: duty_cycle[1] = 0;
-  1425  0011C4  0E00               	movlw	0
+  1424                           ;bitbang.c: 358: duty_cycle[1] = 30;
+  1425  0011C4  0E1E               	movlw	30
   1426  0011C6  6E1E               	movwf	_duty_cycle+1,c
   1427                           
-  1428                           ;bitbang.c: 359: duty_cycle[2] = 180;
-  1429  0011C8  0EB4               	movlw	180
+  1428                           ;bitbang.c: 359: duty_cycle[2] = 65;
+  1429  0011C8  0E41               	movlw	65
   1430  0011CA  6E1F               	movwf	_duty_cycle+2,c
   1431                           
-  1432                           ;bitbang.c: 360: duty_cycle[3] = 0;
-  1433  0011CC  0E00               	movlw	0
+  1432                           ;bitbang.c: 360: duty_cycle[3] = 180;
+  1433  0011CC  0EB4               	movlw	180
   1434  0011CE  6E20               	movwf	_duty_cycle+3,c
   1435                           
   1436                           ;bitbang.c: 361: } else {
   1437  0011D0  0012               	return	
   1438  0011D2                     i2l862:
   1439                           
-  1440                           ;bitbang.c: 362: duty_cycle[0] = 180;
-  1441  0011D2  0EB4               	movlw	180
+  1440                           ;bitbang.c: 362: duty_cycle[0] = 100;
+  1441  0011D2  0E64               	movlw	100
   1442  0011D4  6E1D               	movwf	_duty_cycle,c
   1443                           
-  1444                           ;bitbang.c: 363: duty_cycle[1] = 0;
-  1445  0011D6  0E00               	movlw	0
+  1444                           ;bitbang.c: 363: duty_cycle[1] = 100;
+  1445  0011D6  0E64               	movlw	100
   1446  0011D8  6E1E               	movwf	_duty_cycle+1,c
   1447                           
   1448                           ;bitbang.c: 364: duty_cycle[2] = 180;
   1449  0011DA  0EB4               	movlw	180
   1450  0011DC  6E1F               	movwf	_duty_cycle+2,c
   1451                           
-  1452                           ;bitbang.c: 365: duty_cycle[3] = 0;
-  1453  0011DE  0E00               	movlw	0
+  1452                           ;bitbang.c: 365: duty_cycle[3] = 65;
+  1453  0011DE  0E41               	movlw	65
   1454  0011E0  6E20               	movwf	_duty_cycle+3,c
   1455                           
   1456                           ;bitbang.c: 366: }
@@ -1499,40 +1499,40 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1463  0011E6  A4D8               	btfss	status,2,c
   1464  0011E8  D009               	goto	i2l868
   1465                           
-  1466                           ;bitbang.c: 373: duty_cycle[0] = 180;
-  1467  0011EA  0EB4               	movlw	180
+  1466                           ;bitbang.c: 373: duty_cycle[0] = 30;
+  1467  0011EA  0E1E               	movlw	30
   1468  0011EC  6E1D               	movwf	_duty_cycle,c
   1469                           
-  1470                           ;bitbang.c: 374: duty_cycle[1] = 0;
-  1471  0011EE  0E00               	movlw	0
+  1470                           ;bitbang.c: 374: duty_cycle[1] = 100;
+  1471  0011EE  0E64               	movlw	100
   1472  0011F0  6E1E               	movwf	_duty_cycle+1,c
   1473                           
-  1474                           ;bitbang.c: 375: duty_cycle[2] = 180;
-  1475  0011F2  0EB4               	movlw	180
+  1474                           ;bitbang.c: 375: duty_cycle[2] = 65;
+  1475  0011F2  0E41               	movlw	65
   1476  0011F4  6E1F               	movwf	_duty_cycle+2,c
   1477                           
-  1478                           ;bitbang.c: 376: duty_cycle[3] = 0;
-  1479  0011F6  0E00               	movlw	0
+  1478                           ;bitbang.c: 376: duty_cycle[3] = 180;
+  1479  0011F6  0EB4               	movlw	180
   1480  0011F8  6E20               	movwf	_duty_cycle+3,c
   1481                           
   1482                           ;bitbang.c: 377: } else {
   1483  0011FA  0012               	return	
   1484  0011FC                     i2l868:
   1485                           
-  1486                           ;bitbang.c: 378: duty_cycle[0] = 180;
-  1487  0011FC  0EB4               	movlw	180
+  1486                           ;bitbang.c: 378: duty_cycle[0] = 100;
+  1487  0011FC  0E64               	movlw	100
   1488  0011FE  6E1D               	movwf	_duty_cycle,c
   1489                           
-  1490                           ;bitbang.c: 379: duty_cycle[1] = 0;
-  1491  001200  0E00               	movlw	0
+  1490                           ;bitbang.c: 379: duty_cycle[1] = 30;
+  1491  001200  0E1E               	movlw	30
   1492  001202  6E1E               	movwf	_duty_cycle+1,c
   1493                           
   1494                           ;bitbang.c: 380: duty_cycle[2] = 180;
   1495  001204  0EB4               	movlw	180
   1496  001206  6E1F               	movwf	_duty_cycle+2,c
   1497                           
-  1498                           ;bitbang.c: 381: duty_cycle[3] = 0;
-  1499  001208  0E00               	movlw	0
+  1498                           ;bitbang.c: 381: duty_cycle[3] = 65;
+  1499  001208  0E41               	movlw	65
   1500  00120A  6E20               	movwf	_duty_cycle+3,c
   1501                           
   1502                           ;bitbang.c: 382: }
@@ -1965,7 +1965,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Mon Apr 18 22:17:24 2016
+Symbol Table                                                                                   Tue Apr 26 00:48:03 2016
 
                        l132 136C                         l990 1264                         l994 1274  
                        l996 127A                         _ISR 0008                         wreg 000FE8  

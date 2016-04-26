@@ -181,7 +181,7 @@ void main(void) {
                     // decrease the speed 
                     //--------------------------------------------
                 case's':
-                    if (counter > 25) {
+                    if (count_value > 25) {
                         //printf("Speed decreased by 25\r\n");
                         count_value -= 25;
                     }
@@ -194,7 +194,7 @@ void main(void) {
                     // increase the speed 
                     //--------------------------------------------
                 case'S':
-                    if (counter < 250) {
+                    if (count_value < 250) {
                        // printf("Speed increased by 25\r\n");
                         count_value += 25;
                     }
@@ -337,15 +337,15 @@ void direction_routine() {
         case 'r':
 
             if (direction_change == 0) {
-                HIP0  = 180; // test angles 
-                HIP1  = 0;
-                knee0 = 180;
-                knee1 = 0;
-            } else {
-                HIP0  = 0; // test angles 
-                HIP1  = 180;
-                knee0 = 0;
+                HIP0  = 100; // test angles 
+                HIP1  = 100;
+                knee0 = 65;
                 knee1 = 180;
+            } else {
+                HIP0  = 30; // test angles 
+                HIP1  = 30;
+                knee0 = 180;
+                knee1 = 65;
             }
             break;
 
@@ -354,15 +354,15 @@ void direction_routine() {
             //--------------------------------------------
         case 'l':
             if (direction_change == 0) {
-                HIP0  = 180; // test angles 
-                HIP1  = 0;
-                knee0 = 180;
-                knee1 = 0;
+                HIP0  = 30; // test angles 
+                HIP1  = 30;
+                knee0 = 65;
+                knee1 = 180;
             } else {
-                HIP0  = 180; // test angles 
-                HIP1  = 0;
+                HIP0  = 100; // test angles 
+                HIP1  = 100;
                 knee0 = 180;
-                knee1 = 0;
+                knee1 = 65;
             }
             break;
             //--------------------------------------------
@@ -370,15 +370,15 @@ void direction_routine() {
             //--------------------------------------------
         case 'b':
             if (direction_change == 0) {
-                HIP0  = 180; // test angles 
-                HIP1  = 0;
-                knee0 = 180;
-                knee1 = 0;
+                HIP0  = 30; // test angles 
+                HIP1  = 100;
+                knee0 = 65;
+                knee1 = 180;
             } else {
-                HIP0  = 180; // test angles 
-                HIP1  = 0;
+                HIP0  = 100; // test angles 
+                HIP1  = 30;
                 knee0 = 180;
-                knee1 = 0;
+                knee1 = 65;
             }
             break;
             //--------------------------------------------

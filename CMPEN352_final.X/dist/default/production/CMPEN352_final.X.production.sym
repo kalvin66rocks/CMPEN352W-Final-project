@@ -272,8 +272,8 @@ cstackCOMRAM 1 29 COMRAM 1 1
 text0 1068 1377 CODE 1068 0
 %locals
 dist/default/production\CMPEN352_final.X.production.obj
-H:\include\pic18f26k22.h
-C:\Users\Mike\AppData\Local\Temp\s3k0.
+C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f26k22.h
+C:\Users\Michael\AppData\Local\Temp\sd4o.
 877 1338 0 CODE 0
 879 1338 0 CODE 0
 882 1338 0 CODE 0
@@ -337,7 +337,7 @@ bitbang.c
 117 1116 0 CODE 0
 226 1156 0 CODE 0
 108 1162 0 CODE 0
-H:\sources\common\doprnt.c
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
 464 125A 0 CODE 0
 533 125A 0 CODE 0
 536 1262 0 CODE 0

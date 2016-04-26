@@ -2,10 +2,10 @@ Microchip MPLAB XC8 Compiler V1.35 ()
 
 Linker command line:
 
--W-3 --edf=H:\dat\en_msgs.txt -cs \
+-W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/default/production\CMPEN352_final.X.production.sym \
   --cmf=dist/default/production\CMPEN352_final.X.production.cmf -z \
-  -Q18F26K22 -oC:\Users\Mike\AppData\Local\Temp\s3k0.2 \
+  -Q18F26K22 -oC:\Users\Michael\AppData\Local\Temp\sd4o.2 \
   -Mdist/default/production/CMPEN352_final.X.production.map -E1 -ver=XC8 \
   -ASTACK=060h-0f37h -pstack=STACK -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh \
   -ASMALLCONST=01000h-010FFhx240 -AMEDIUMCONST=01000h-0FFFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Mike\AppData\Local\Temp\s3k0.obj \
+  C:\Users\Michael\AppData\Local\Temp\sd4o.obj \
   dist/default/production\CMPEN352_final.X.production.obj 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Mike\AppData\Local\Temp\s3k0.obj
+C:\Users\Michael\AppData\Local\Temp\sd4o.obj
                 end_init                            168      168        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -486,7 +486,7 @@ Total ram usage:        0 bytes
 
  *************** function _printf *****************
  Defined at:
-		line 464 in file "H:\sources\common\doprnt.c"
+		line 464 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c"
  Parameters:    Size  Location     Type
   f               2   20[COMRAM] PTR const unsigned char 
 		 -> STR_8(3), STR_7(17), STR_6(19), STR_5(8), 
@@ -656,13 +656,13 @@ bitbang.c
 
 bitbang.c estimated size: 969
 
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+		_printf        		CODE           	125A	0000	121
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c estimated size: 121
+
 shared
 		__initialization		CODE           	1338	0000	37
 
 shared estimated size: 37
-
-H:\sources\common\doprnt.c
-		_printf        		CODE           	125A	0000	121
-
-H:\sources\common\doprnt.c estimated size: 121
 
